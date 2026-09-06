@@ -59,6 +59,9 @@ const UI = {
     focus:          { en: "Key focus", id: "Fokus utama" },
     enlarge:        { en: "Click to enlarge", id: "Klik untuk memperbesar" },
     watch:          { en: "Watch on YouTube", id: "Tonton di YouTube" },
+    onePager:       { en: "Prefer the one-page version?", id: "Lebih suka versi satu halaman?" },
+    onePagerCta:    { en: "Download the 1-page CV", id: "Unduh CV 1 halaman" },
+    toTop:          { en: "Back to top", id: "Kembali ke atas" },
     degree:         { en: "Degree", id: "Program" },
     institution:    { en: "Institution", id: "Institusi" },
     period:         { en: "Period", id: "Periode" },
@@ -385,6 +388,7 @@ function renderCerts() {
 
 function renderContact() {
   const L = UI.labels;
+  const handle = CV.meta.linkedin.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
   return `
   <section id="contact" class="section contact">
     <div class="wrap">
@@ -397,13 +401,15 @@ function renderContact() {
             <a class="btn btn-primary" href="mailto:${CV.meta.email}">${t(L.emailCta)}</a>
             <a class="btn btn-ghost" href="${CV.meta.cv}" download>${t(L.downloadFull)}</a>
           </div>
+          <p class="contact-alt">${t(L.onePager)}
+            <a href="${CV.meta.cvShort}" download>${t(L.onePagerCta)} ↓</a>
+          </p>
         </div>
         <dl class="contact-list reveal">
           <div><dt>${t(L.email)}</dt><dd><a href="mailto:${CV.meta.email}">${CV.meta.email}</a></dd></div>
           <div><dt>${t(L.phone)}</dt><dd><a href="${CV.meta.phoneHref}">${CV.meta.phone}</a></dd></div>
-          <div><dt>${t(L.linkedin)}</dt><dd><a href="${CV.meta.linkedin}" target="_blank" rel="noopener">/aditya-bayu-pratama ↗</a></dd></div>
+          <div><dt>${t(L.linkedin)}</dt><dd><a href="${CV.meta.linkedin}" target="_blank" rel="noopener">${handle} ↗</a></dd></div>
           <div><dt>${t(L.location)}</dt><dd>${t(CV.meta.location)}</dd></div>
-          <div><dt>CV</dt><dd><a href="${CV.meta.cvShort}" download>${t(L.downloadShort)} ↓</a></dd></div>
         </dl>
       </div>
     </div>
@@ -439,6 +445,10 @@ function render() {
 }
 
 function wire() {
+  if (typeof toTop !== "undefined") {
+    toTop.title = t(UI.labels.toTop);
+    toTop.setAttribute("aria-label", t(UI.labels.toTop));
+  }
   document.querySelectorAll("[data-lang]").forEach(b => b.onclick = () => {
     lang = b.dataset.lang;
     localStorage.setItem("cv-lang", lang);
@@ -472,9 +482,24 @@ function observe() {
 
 }
 
-/* header state: attached once, not per render */
-const onScroll = () =>
+/* header state, reading progress and back-to-top: attached once */
+const progress = document.createElement("div");
+progress.id = "progress";
+document.body.appendChild(progress);
+
+const toTop = document.createElement("button");
+toTop.id = "toTop";
+toTop.type = "button";
+toTop.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V6m0 0-6 6m6-6 6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>`;
+toTop.onclick = () => scrollTo({ top: 0, behavior: "smooth" });
+document.body.appendChild(toTop);
+
+const onScroll = () => {
   document.getElementById("header").classList.toggle("scrolled", scrollY > 40);
+  const max = document.documentElement.scrollHeight - innerHeight;
+  progress.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+  toTop.classList.toggle("show", scrollY > 700);
+};
 addEventListener("scroll", onScroll, { passive: true });
 onScroll();
 

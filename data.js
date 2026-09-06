@@ -535,15 +535,23 @@ const CV = {
   skills: [
     {
       group: { en: "Software & Languages", id: "Software & Bahasa Pemrograman" },
-      items: ["C# (.NET Framework)", "SQL / MySQL", "Python", "React.js", "C++", "LabVIEW", "Dart / Flutter", "REST API"]
+      items: ["C# (.NET Framework)", "SQL / MySQL", "Python", "React.js", "JavaScript", "C++", "LabVIEW",
+              "Dart / Flutter", "R", "REST API"]
     },
     {
       group: { en: "Smart Manufacturing", id: "Smart Manufacturing" },
-      items: ["MES Architecture", "Industrial IoT (IIoT)", "Pokayoke System", "AOI Machine Vision", "Thermal Print Automation", "Traceability"]
+      items: ["MES Architecture", "Industrial IoT (IIoT)", "Pokayoke System", "AOI Machine Vision",
+              "Thermal Print Automation", "Traceability", "SMT Line Analytics", "Feeder Asset Tracking", "Node-RED"]
     },
     {
       group: { en: "Hardware & Automation", id: "Hardware & Otomasi" },
       items: ["PLC (BNSP Certified)", "Raspberry Pi", "Arduino", "Lidar & Laser Sensors", "DAQ Systems", "SCADA", "PID Control"]
+    },
+    {
+      group: { en: "AI & Modern Tooling", id: "AI & Perkakas Modern" },
+      items: ["Claude Code", "Cursor", "Antigravity", "Codex", "LM Studio (local LLM)",
+              "AI-Assisted Development", "Prompt Engineering", "LLM Integration",
+              "Machine Learning Practice", "OpenCV / Computer Vision"]
     },
     {
       group: { en: "Engineering Quality", id: "Kualitas Engineering" },
@@ -551,7 +559,8 @@ const CV = {
     },
     {
       group: { en: "IT & Leadership", id: "IT & Kepemimpinan" },
-      items: ["Team Recruitment & Management", "Network Infrastructure", "Enterprise Server Maintenance", "Incident Response", "Project Management"]
+      items: ["Team Recruitment & Management", "Department Budget Ownership", "Network Infrastructure",
+              "Enterprise Server Maintenance", "DevOps Basics", "Incident Response", "Project Management"]
     }
   ],
 

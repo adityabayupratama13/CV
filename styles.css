@@ -133,7 +133,7 @@ p{margin:0 0 1em}
 .btn-primary{background:var(--accent);color:#fff}
 .btn-primary:hover{background:#173FD6}
 .btn-ghost{border-color:currentColor;color:inherit}
-.btn-ghost:hover{background:currentColor;color:var(--navy)}
+.btn-ghost:hover{background:#fff;color:var(--navy);border-color:#fff}
 .hero-meta{
   display:flex;align-items:center;gap:14px;flex-wrap:wrap;
   margin-top:56px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);
@@ -543,3 +543,85 @@ p{margin:0 0 1em}
 /* education: period stays on the title line */
 .edu-head{align-items:center;flex-wrap:nowrap}
 .edu-title{margin-right:auto;min-width:0}
+
+/* ============ hero motion ============ */
+@keyframes drift{
+  0%{transform:translate3d(0,0,0) scale(1)}
+  50%{transform:translate3d(-4%,3%,0) scale(1.08)}
+  100%{transform:translate3d(3%,-2%,0) scale(1.02)}
+}
+@keyframes drift2{
+  0%{transform:translate3d(0,0,0) scale(1);opacity:.5}
+  50%{transform:translate3d(6%,-4%,0) scale(1.12);opacity:.75}
+  100%{transform:translate3d(-3%,4%,0) scale(1);opacity:.5}
+}
+@keyframes gridpan{
+  from{background-position:0 0,0 0}
+  to{background-position:76px 76px,76px 76px}
+}
+@keyframes rise{
+  from{opacity:0;transform:translateY(26px)}
+  to{opacity:1;transform:none}
+}
+.hero-glow{animation:drift 22s ease-in-out infinite alternate}
+.hero-bg::after{
+  content:"";position:absolute;left:-10%;bottom:-30%;width:680px;height:680px;border-radius:50%;
+  background:radial-gradient(circle,rgba(34,81,255,.28) 0%,rgba(34,81,255,0) 62%);
+  filter:blur(14px);animation:drift2 28s ease-in-out infinite alternate;
+}
+.hero-grid{animation:gridpan 70s linear infinite}
+.hero-inner > *{animation:rise .9s cubic-bezier(.2,.6,.2,1) both}
+.hero-inner > *:nth-child(1){animation-delay:.05s}
+.hero-inner > *:nth-child(2){animation-delay:.15s}
+.hero-inner > *:nth-child(3){animation-delay:.28s}
+.hero-inner > *:nth-child(4){animation-delay:.4s}
+.hero-inner > *:nth-child(5){animation-delay:.52s}
+.metrics{animation:rise 1s cubic-bezier(.2,.6,.2,1) .62s both}
+
+/* current role marker: a slow, quiet pulse */
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 45%,transparent)}
+  70%{box-shadow:0 0 0 9px color-mix(in srgb,var(--accent) 0%,transparent)}
+  100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 0%,transparent)}
+}
+.role.now::before{animation:pulse 2.6s ease-out infinite}
+
+/* ============ research: clear rule under the heading ============ */
+.research .section-head{margin-bottom:0;padding-bottom:40px}
+.research-grid{border-top:1px solid var(--line);padding-top:46px}
+
+/* ============ contact: CV downloads kept together ============ */
+.contact-alt{margin:20px 0 0;font-size:13.5px;color:rgba(255,255,255,.62)}
+.contact-alt a{
+  color:#fff;border-bottom:1px solid rgba(255,255,255,.35);margin-left:6px;
+  transition:border-color .25s,color .25s;
+}
+.contact-alt a:hover{color:var(--accent-soft);border-bottom-color:var(--accent-soft)}
+.contact-list dd a{border-bottom:1px solid transparent;transition:border-color .25s,color .25s}
+.contact-list dd a:hover{border-bottom-color:currentColor}
+
+/* ============ reading progress ============ */
+#progress{
+  position:fixed;top:0;left:0;height:2px;width:100%;z-index:60;
+  background:linear-gradient(90deg,var(--accent),var(--accent-soft));
+  transform:scaleX(0);transform-origin:0 50%;
+  transition:transform .12s linear;pointer-events:none;
+}
+
+/* ============ back to top ============ */
+#toTop{
+  position:fixed;right:26px;bottom:26px;z-index:55;width:46px;height:46px;
+  display:grid;place-items:center;cursor:pointer;
+  background:var(--surface);color:var(--text);border:1px solid var(--line);
+  box-shadow:var(--shadow);opacity:0;transform:translateY(14px);pointer-events:none;
+  transition:opacity .35s ease,transform .35s ease,background .25s,color .25s,border-color .25s;
+}
+#toTop.show{opacity:1;transform:none;pointer-events:auto}
+#toTop:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+#toTop svg{width:19px;height:19px}
+@media (max-width:640px){ #toTop{right:16px;bottom:16px;width:42px;height:42px} }
+
+@media (prefers-reduced-motion:reduce){
+  .hero-glow,.hero-bg::after,.hero-grid,.hero-inner > *,.metrics,.role.now::before{animation:none}
+  #progress{transition:none}
+}
