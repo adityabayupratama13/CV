@@ -108,10 +108,44 @@ const CV = {
       location: { en: "Batam, Indonesia · On-site", id: "Batam, Indonesia · On-site" },
       period: { en: "Apr 2019 — Present", id: "Apr 2019 — Sekarang" },
       role: { en: "Supervisor MES & IT", id: "Supervisor MES & IT" },
-      subroles: {
-        en: "Promoted from Lead Software & IT Engineer · Software & IT Engineer · Software Test Engineer · New Product Introduction Engineer",
-        id: "Promosi dari Lead Software & IT Engineer · Software & IT Engineer · Software Test Engineer · New Product Introduction Engineer"
-      },
+      subroles: { en: "", id: "" },
+      /* career progression inside the company — newest first.
+         Edit a `period` here whenever a title or date changes. */
+      roles: [
+        {
+          title: { en: "Supervisor MES & IT", id: "Supervisor MES & IT" },
+          period: { en: "Jul 2026 — Present", id: "Jul 2026 — Sekarang" },
+          note: {
+            en: "Promoted to lead the MES and IT function: department strategy, system architecture, budget and the engineering team.",
+            id: "Dipromosikan untuk memimpin fungsi MES dan IT: strategi departemen, arsitektur sistem, anggaran, dan tim engineering."
+          },
+          current: true
+        },
+        {
+          title: { en: "Lead Software & IT Engineer", id: "Lead Software & IT Engineer" },
+          period: { en: "Apr 2019 — Jun 2026", id: "Apr 2019 — Jun 2026" },
+          note: {
+            en: "Started as the sole software and IT engineer, then grew the function into a five-engineer team while architecting the MES, the Giken One web platform and the plant's data infrastructure.",
+            id: "Memulai sebagai satu-satunya software dan IT engineer, lalu mengembangkan fungsi tersebut menjadi tim beranggotakan lima engineer sambil merancang MES, platform web Giken One, dan infrastruktur data pabrik."
+          }
+        },
+        {
+          title: { en: "Software Test Engineer", id: "Software Test Engineer" },
+          period: { en: "Apr 2019 — Present", id: "Apr 2019 — Sekarang" },
+          note: {
+            en: "Machine testing software for new products, trial runs and translating customer requirements into test criteria.",
+            id: "Software pengujian mesin untuk produk baru, uji coba produksi, serta menerjemahkan kebutuhan pelanggan menjadi kriteria pengujian."
+          }
+        },
+        {
+          title: { en: "New Product Introduction Engineer", id: "New Product Introduction Engineer" },
+          period: { en: "Apr 2019 — Sep 2021", id: "Apr 2019 — Sep 2021" },
+          note: {
+            en: "Study of new electronics projects: FMEA, 5M change management, BOM lists and QCPC, product trials and production problem solving.",
+            id: "Kajian proyek elektronik baru: FMEA, manajemen perubahan 5M, daftar BOM dan QCPC, uji coba produk, serta penyelesaian masalah produksi."
+          }
+        }
+      ],
       summary: {
         en: "Responsible for the MES and IT roadmap of a high-precision electronics plant — its architecture, delivery, infrastructure and the engineering team behind it.",
         id: "Bertanggung jawab atas peta jalan MES dan IT di pabrik elektronik presisi tinggi — mulai dari arsitektur, pengembangan, infrastruktur, hingga tim engineering di belakangnya."
@@ -356,13 +390,30 @@ const CV = {
         en: "Wireless rescue robot for hazardous-environment search, controlled from web and mobile apps.",
         id: "Robot penyelamat nirkabel untuk pencarian di lingkungan berbahaya, dikendalikan dari aplikasi web dan mobile."
       },
+      /* drop the Node-RED dashboard screenshot in assets/img/projects/iot-rescue-robot/
+         and list it here to turn this card into a slideshow */
+      images: [],
+      flow: ["Camera + Sensors", "Raspberry Pi", "API Communication", "Node-RED + Android App"],
       points: [
         { en: "Raspberry Pi and Arduino control with wireless teleoperation", id: "Kontrol Raspberry Pi dan Arduino dengan teleoperasi nirkabel" },
         { en: "Thermal, gas, smoke and PIR sensors for detecting survivors", id: "Sensor termal, gas, asap, dan PIR untuk mendeteksi korban" },
-        { en: "Live camera streaming to web and mobile clients", id: "Streaming kamera langsung ke klien web dan mobile" },
+        { en: "Live camera streaming plus humidity, temperature and smoke telemetry on a Node-RED dashboard", id: "Streaming kamera langsung beserta telemetri kelembapan, suhu, dan asap pada dashboard Node-RED" },
         { en: "Built for search in environments unsafe for rescue teams", id: "Dirancang untuk pencarian di lingkungan yang tidak aman bagi tim penyelamat" }
       ],
       tags: ["Raspberry Pi", "Arduino", "Sensors", "Streaming"]
+    },
+    {
+      title: { en: "Two Wheels Balancing Robot (Remote Control)", id: "Robot Penyeimbang Dua Roda (Remote Control)" },
+      category: { en: "Control Systems · Video", id: "Sistem Kendali · Video" },
+      year: "2020",
+      desc: {
+        en: "Self-balancing two-wheeled robot built on Arduino: an IMU feeds a PID control loop that holds the chassis upright while the robot is driven by remote control. Watch it balancing and driving on YouTube.",
+        id: "Robot dua roda yang menyeimbangkan diri berbasis Arduino: IMU menjadi masukan bagi loop kendali PID yang menjaga sasis tetap tegak sementara robot dikemudikan lewat remote control. Lihat aksinya di YouTube."
+      },
+      tags: ["Arduino", "PID Control", "IMU", "Robotics"],
+      video: true,
+      image: "https://img.youtube.com/vi/ftbygNLeoSw/maxresdefault.jpg",
+      link: "https://youtu.be/ftbygNLeoSw"
     },
     {
       title: { en: "Smart Multi-Biometric Access Controller", id: "Pengendali Akses Multi-Biometrik" },
@@ -511,9 +562,24 @@ const CV = {
                 id: "Sarjana Terapan (S.Tr.T.) — Teknik Mekatronika, Robotika & Otomasi" },
       period: { en: "Jul 2017 — Jul 2021", id: "Jul 2017 — Jul 2021" },
       grade: { en: "Graduated Cum Laude · GPA 3.81 / 4.00", id: "Lulus Cum Laude · IPK 3,81 / 4,00" },
-      focus: {
-        en: "Machine Vision (C# & LabVIEW), Distributed Control Systems, Industrial IoT, SCADA, PLC, Microcontrollers, AI & Robotics, Pneumatics & Hydraulics, PID Control.",
-        id: "Machine Vision (C# & LabVIEW), Distributed Control System, Industrial IoT, SCADA, PLC, Mikrokontroler, AI & Robotika, Pneumatik & Hidrolik, Kontrol PID."
+      points: [
+        { en: "Machine Vision (C# & LabVIEW)", id: "Machine Vision (C# & LabVIEW)" },
+        { en: "Distributed Control System (DCS)", id: "Distributed Control System (DCS)" },
+        { en: "Supervisory Control & Data Acquisition (SCADA)", id: "Supervisory Control & Data Acquisition (SCADA)" },
+        { en: "Programmable Logic Controller (PLC)", id: "Programmable Logic Controller (PLC)" },
+        { en: "Internet of Things (IoT)", id: "Internet of Things (IoT)" },
+        { en: "Microprocessor & Microcontroller", id: "Mikroprosesor & Mikrokontroler" },
+        { en: "Artificial Intelligence & Robotics", id: "Kecerdasan Buatan & Robotika" },
+        { en: "Pneumatic & Hydraulic Automation", id: "Otomasi Pneumatik & Hidrolik" },
+        { en: "C# & .NET Framework Programming", id: "Pemrograman C# & .NET Framework" },
+        { en: "LabVIEW Programming", id: "Pemrograman LabVIEW" },
+        { en: "PID Controller", id: "Kontroler PID" },
+        { en: "Material Technology", id: "Teknologi Material" }
+      ],
+      thesis: {
+        title: { en: "Final-year thesis journal", id: "Jurnal tugas akhir" },
+        name: { en: "Read the published journal", id: "Baca jurnal yang dipublikasikan" },
+        url: "https://drive.google.com/file/d/15KlJZh4uSoRouvgXIm53M1eEt6EKkfCK/view"
       }
     }
   ],

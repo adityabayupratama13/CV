@@ -189,6 +189,7 @@ p{margin:0 0 1em}
 .exp:first-child{border-top:0;padding-top:0}
 .logo{width:74px;height:74px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;padding:10px;margin-bottom:18px}
 .logo img{object-fit:contain;max-height:100%}
+.exp-side{position:sticky;top:104px}
 .exp-period{font-size:13px;letter-spacing:.04em;font-weight:600;margin:0 0 4px}
 .exp-loc{font-size:13px;color:var(--text-2);margin:0}
 .exp-main h3{font-size:clamp(20px,2.2vw,27px)}
@@ -459,4 +460,55 @@ p{margin:0 0 1em}
   .pcol:first-child{border-top:0}
   .edu-rows > div{grid-template-columns:1fr;gap:6px}
   .rq{grid-template-columns:36px 1fr;gap:12px}
+}
+
+/* ============ shared mini label ============ */
+.mini-label{
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-2);
+  font-weight:600;margin:30px 0 14px;
+}
+
+/* ============ career progression ============ */
+.role-list{list-style:none;margin:0;padding:0 0 0 26px;position:relative}
+.role-list::before{content:"";position:absolute;left:4px;top:6px;bottom:6px;width:1px;background:var(--line)}
+.role{position:relative;padding:0 0 22px}
+.role:last-child{padding-bottom:0}
+.role::before{
+  content:"";position:absolute;left:-26px;top:7px;width:9px;height:9px;border-radius:50%;
+  background:var(--bg-alt);border:1.5px solid var(--line);
+}
+.role.now::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%,transparent)}
+.role-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.role h4{font-size:15.5px;font-weight:600}
+.role.now h4{color:var(--accent)}
+.role-period{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-2);white-space:nowrap}
+.role-period em{
+  font-style:normal;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);
+  padding:2px 7px;margin-left:6px;font-size:10px;
+}
+.role p{margin:6px 0 0;font-size:14px;color:var(--text-2);max-width:66ch}
+
+/* ============ project system flow ============ */
+.flow{margin-top:18px}
+.flow .mini-label{margin:0 0 10px}
+.flow-chain{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.flow-chain span{
+  font-size:11px;letter-spacing:.06em;padding:6px 11px;border:1px solid var(--line);
+  background:color-mix(in srgb,var(--accent) 7%,transparent);color:var(--text);
+}
+.flow-chain span + span::before{content:"→";margin-right:9px;color:var(--accent);font-weight:600}
+
+/* ============ education points ============ */
+.edu-points{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 32px}
+.edu-points li{position:relative;padding-left:18px;font-size:14.5px}
+.edu-points li::before{content:"";position:absolute;left:0;top:10px;width:8px;height:1px;background:var(--accent)}
+.link-out{
+  color:var(--accent);font-weight:600;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent);
+  transition:border-color .25s;
+}
+.link-out:hover{border-bottom-color:var(--accent)}
+
+@media (max-width:960px){
+  .exp-side{position:static}
+  .edu-points{grid-template-columns:1fr}
 }

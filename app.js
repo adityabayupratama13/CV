@@ -60,7 +60,11 @@ const UI = {
     institution:    { en: "Institution", id: "Institusi" },
     period:         { en: "Period", id: "Periode" },
     result:         { en: "Result", id: "Hasil" },
-    question:       { en: "Research question", id: "Pertanyaan riset" }
+    question:       { en: "Research question", id: "Pertanyaan riset" },
+    progression:    { en: "Career progression", id: "Perjalanan karier" },
+    current:        { en: "Current", id: "Saat ini" },
+    coursework:     { en: "Coursework & specialisation", id: "Mata kuliah & spesialisasi" },
+    architecture:   { en: "System flow", id: "Alur sistem" }
   }
 };
 
@@ -161,6 +165,14 @@ function renderProfile() {
 
 function renderExperience() {
   const items = CV.experience.map(e => {
+    const roles = (e.roles || []).map(r => `
+      <li class="role${r.current ? " now" : ""}">
+        <div class="role-head">
+          <h4>${t(r.title)}</h4>
+          <span class="role-period">${t(r.period)}${r.current ? ` <em>${t(UI.labels.current)}</em>` : ""}</span>
+        </div>
+        <p>${t(r.note)}</p>
+      </li>`).join("");
     const bullets = e.bullets.map(b => `
       <li><strong>${t(b.t)}</strong><span>${t(b.d)}</span></li>`).join("");
     const tags = (e.tags || []).map(x => `<span class="tag">${x}</span>`).join("");
@@ -169,7 +181,6 @@ function renderExperience() {
     return `
     <article class="exp reveal">
       <div class="exp-side">
-        <div class="img-wrap logo">${img(e.logo, "", e.company)}</div>
         <p class="exp-period">${t(e.period)}</p>
         <p class="exp-loc">${t(e.location)}</p>
       </div>
@@ -178,6 +189,11 @@ function renderExperience() {
         <p class="exp-company">${e.company}</p>
         ${t(e.subroles) ? `<p class="exp-sub">${t(e.subroles)}</p>` : ""}
         <p class="exp-summary">${t(e.summary)}</p>
+        ${roles ? `<div class="roles">
+            <p class="mini-label">${t(UI.labels.progression)}</p>
+            <ol class="role-list">${roles}</ol>
+          </div>` : ""}
+        <p class="mini-label">${t(UI.labels.highlights)}</p>
         <ul class="exp-bullets">${bullets}</ul>
         ${gallery}
         <div class="tags">${tags}</div>
@@ -206,6 +222,9 @@ function media(p) {
 function renderProjects() {
   const cards = CV.projects.map(p => {
     const tags = (p.tags || []).map(x => `<span class="tag">${x}</span>`).join("");
+    const flow = (p.flow || []).length
+      ? `<div class="flow"><p class="mini-label">${t(UI.labels.architecture)}</p>
+          <div class="flow-chain">${p.flow.map(x => `<span>${x}</span>`).join("")}</div></div>` : "";
     const points = (p.points || []).length
       ? `<ul class="plist">${p.points.map(x => `<li>${t(x)}</li>`).join("")}</ul>` : "";
     const inner = `
@@ -214,6 +233,7 @@ function renderProjects() {
         <p class="pcard-cat">${t(p.category)} · ${p.year}</p>
         <h3>${t(p.title)}</h3>
         <p class="pcard-desc">${t(p.desc)}</p>
+        ${flow}
         ${points}
         <div class="tags">${tags}</div>
       </div>`;
@@ -303,7 +323,9 @@ function renderSkills() {
 
 function renderEducation() {
   const L = UI.labels;
-  const items = CV.education.map(e => `
+  const items = CV.education.map(e => {
+    const points = (e.points || []).map(x => `<li>${t(x)}</li>`).join("");
+    return `
     <article class="edu reveal">
       <header class="edu-head">
         <h3>${e.school}</h3>
@@ -312,9 +334,17 @@ function renderEducation() {
       <dl class="edu-rows">
         <div><dt>${t(L.degree)}</dt><dd>${t(e.degree)}</dd></div>
         <div><dt>${t(L.result)}</dt><dd>${t(e.grade)}</dd></div>
-        <div><dt>${t(L.focus)}</dt><dd>${t(e.focus)}</dd></div>
+        <div>
+          <dt>${t(L.coursework)}</dt>
+          <dd><ul class="edu-points">${points}</ul></dd>
+        </div>
+        ${e.thesis ? `<div>
+          <dt>${t(e.thesis.title)}</dt>
+          <dd><a class="link-out" href="${e.thesis.url}" target="_blank" rel="noopener">${t(e.thesis.name)} ↗</a></dd>
+        </div>` : ""}
       </dl>
-    </article>`).join("");
+    </article>`;
+  }).join("");
   return `
   <section id="education" class="section">
     <div class="wrap">${head("education")}${items}</div>
