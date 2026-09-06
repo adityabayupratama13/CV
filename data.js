@@ -272,10 +272,10 @@ const CV = {
       category: { en: "Department Platform · Web App", id: "Platform Departemen · Aplikasi Web" },
       year: "2026",
       desc: {
-        en: "The operating system of the PCBA IT department: help-desk tickets, tasks, schedules, projects, attendance, assets, a knowledge base and an audit log in one web app, on a live team dashboard.",
-        id: "Sistem operasional departemen IT PCBA: tiket help-desk, task, jadwal, proyek, absensi, aset, knowledge base, dan audit log dalam satu aplikasi web, di atas dashboard tim real-time."
+        en: "The operating system of the PCBA IT department, built in React.js and MySQL: help-desk tickets, tasks, schedules, projects, attendance, assets, a knowledge base and an audit log on one live team dashboard.",
+        id: "Sistem operasional departemen IT PCBA, dibangun dengan React.js dan MySQL: tiket help-desk, task, jadwal, proyek, absensi, aset, knowledge base, dan audit log dalam satu dashboard tim real-time."
       },
-      tags: ["Web App", "Help Desk", "Task Management", "Knowledge Base", "Dashboard", "MySQL"],
+      tags: ["React.js", "MySQL", "Help Desk", "Task Management", "Knowledge Base", "Dashboard"],
       images: [
         "assets/img/projects/pcba-management-apps/02-2-dashboard.png",
         "assets/img/projects/pcba-management-apps/03-3-help-desk-ticket.png",
