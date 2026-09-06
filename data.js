@@ -12,8 +12,8 @@ const CV = {
     name: "Aditya Bayu Pratama",
     initials: "AB",
     role: {
-      en: "Supervisor MES & IT",
-      id: "Supervisor MES & IT"
+      en: "Supervisor MES & IT Engineer",
+      id: "Supervisor MES & IT Engineer"
     },
     tagline: {
       en: "Smart Manufacturing · Industry 4.0 · Enterprise Systems",
@@ -60,8 +60,8 @@ const CV = {
     },
     body: [
       {
-        en: "Results-driven Supervisor MES & IT with more than seven years of expertise in Manufacturing Execution Systems, Industrial IoT, machine vision and smart factory automation across high-precision electronics and the oil & gas sector.",
-        id: "Supervisor MES & IT yang berorientasi hasil dengan pengalaman lebih dari tujuh tahun di bidang Manufacturing Execution System, Industrial IoT, machine vision, dan otomasi smart factory pada industri elektronik presisi tinggi serta sektor oil & gas."
+        en: "Results-driven Supervisor MES & IT Engineer with more than seven years of expertise in Manufacturing Execution Systems, Industrial IoT, machine vision and smart factory automation across high-precision electronics and the oil & gas sector.",
+        id: "Supervisor MES & IT Engineer yang berorientasi hasil dengan pengalaman lebih dari tujuh tahun di bidang Manufacturing Execution System, Industrial IoT, machine vision, dan otomasi smart factory pada industri elektronik presisi tinggi serta sektor oil & gas."
       },
       {
         en: "Proven track record of scaling an IT department from a solo role into a five-engineer team, architecting custom C#/.NET enterprise solutions governing 500+ product models, and executing high-stakes Industry 4.0 digital transformations end to end.",
@@ -73,7 +73,7 @@ const CV = {
       }
     ],
     facts: [
-      { k: { en: "Current role", id: "Posisi saat ini" }, v: { en: "Supervisor MES & IT — Giken Precision Indonesia", id: "Supervisor MES & IT — Giken Precision Indonesia" } },
+      { k: { en: "Current role", id: "Posisi saat ini" }, v: { en: "Supervisor MES & IT Engineer — Giken Precision Indonesia", id: "Supervisor MES & IT Engineer — Giken Precision Indonesia" } },
       { k: { en: "Based in", id: "Domisili" },            v: { en: "Batam, Riau Islands, Indonesia", id: "Batam, Kepulauan Riau, Indonesia" } },
       { k: { en: "Work mode", id: "Mode kerja" },         v: { en: "On-site · Hybrid · Remote", id: "On-site · Hybrid · Remote" } },
       { k: { en: "Languages", id: "Bahasa" },             v: { en: "Indonesian (native) · English (professional)", id: "Indonesia (asli) · Inggris (profesional)" } }
@@ -108,7 +108,7 @@ const CV = {
       companyUrl: "https://www.linkedin.com/company/giken-precision-indonesia-pt/",
       location: { en: "Batam, Indonesia · On-site", id: "Batam, Indonesia · On-site" },
       period: { en: "Apr 2019 — Present", id: "Apr 2019 — Sekarang" },
-      role: { en: "Supervisor MES & IT", id: "Supervisor MES & IT" },
+      role: { en: "Supervisor MES & IT Engineer", id: "Supervisor MES & IT Engineer" },
       subroles: { en: "", id: "" },
       /* career progression inside the company — newest first.
          Edit a `period` here whenever a title or date changes. */
