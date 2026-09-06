@@ -181,6 +181,9 @@ function renderExperience() {
     return `
     <article class="exp reveal">
       <div class="exp-side">
+        ${e.logo ? `<a class="exp-logo" href="${e.companyUrl || "#"}" target="_blank" rel="noopener" title="${e.company} — LinkedIn">
+            <img src="${e.logo}" alt="${e.company}" loading="lazy" onerror="this.parentElement.remove()">
+          </a>` : ""}
         <p class="exp-period">${t(e.period)}</p>
         <p class="exp-loc">${t(e.location)}</p>
       </div>

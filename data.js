@@ -105,6 +105,7 @@ const CV = {
     {
       company: "Giken Precision Indonesia",
       logo: "assets/img/experience/giken.png",
+      companyUrl: "https://www.linkedin.com/company/giken-precision-indonesia-pt/",
       location: { en: "Batam, Indonesia · On-site", id: "Batam, Indonesia · On-site" },
       period: { en: "Apr 2019 — Present", id: "Apr 2019 — Sekarang" },
       role: { en: "Supervisor MES & IT", id: "Supervisor MES & IT" },
@@ -193,6 +194,7 @@ const CV = {
     {
       company: "Cladtek Bi-Metal Manufacturing",
       logo: "assets/img/experience/cladtek.png",
+      companyUrl: "https://www.linkedin.com/company/cladtek/",
       location: { en: "Batam, Indonesia · On-site", id: "Batam, Indonesia · On-site" },
       period: { en: "Apr 2018 — Jan 2019", id: "Apr 2018 — Jan 2019" },
       role: { en: "Junior Programmer — R&D Department", id: "Junior Programmer — Departemen R&D" },
@@ -392,7 +394,7 @@ const CV = {
       },
       /* drop the Node-RED dashboard screenshot in assets/img/projects/iot-rescue-robot/
          and list it here to turn this card into a slideshow */
-      images: [],
+      images: ["assets/img/projects/iot-rescue-robot/01-dashboard.jpg"],
       flow: ["Camera + Sensors", "Raspberry Pi", "API Communication", "Node-RED + Android App"],
       points: [
         { en: "Raspberry Pi and Arduino control with wireless teleoperation", id: "Kontrol Raspberry Pi dan Arduino dengan teleoperasi nirkabel" },
