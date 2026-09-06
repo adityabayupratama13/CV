@@ -25,8 +25,29 @@ const CV = {
     email: "adityabayupratama13@gmail.com",
     linkedin: "https://www.linkedin.com/in/aditya-bayu-pratama-00561314a",
     photo: "assets/img/profile/aditya.jpg",     // drop your photo here
-    cv: "assets/docs/Aditya Bayu Pratama - CV (2 Pages).pdf",
-    cvShort: "assets/docs/Aditya Bayu Pratama - CV (1 Page).pdf"
+    /* the hero and contact buttons use `cv`; the full set is listed under `cvs` */
+    cv: "assets/docs/Aditya Bayu Pratama - CV Professional (2 Pages).pdf",
+    cvShort: "assets/docs/Aditya Bayu Pratama - CV Professional (1 Page).pdf",
+    cvs: [
+      {
+        label: { en: "Professional edition", id: "Edisi profesional" },
+        note: { en: "Designed layout — for people, email and print.",
+                id: "Tata letak berdesain — untuk manusia, email, dan cetak." },
+        files: [
+          { name: { en: "2 pages", id: "2 halaman" }, url: "assets/docs/Aditya Bayu Pratama - CV Professional (2 Pages).pdf" },
+          { name: { en: "1 page", id: "1 halaman" }, url: "assets/docs/Aditya Bayu Pratama - CV Professional (1 Page).pdf" }
+        ]
+      },
+      {
+        label: { en: "ATS edition", id: "Edisi ATS" },
+        note: { en: "Plain single column — parses cleanly in applicant tracking systems.",
+                id: "Satu kolom polos — terbaca rapi oleh sistem pelacak pelamar (ATS)." },
+        files: [
+          { name: { en: "2 pages", id: "2 halaman" }, url: "assets/docs/Aditya Bayu Pratama - CV ATS (2 Pages).pdf" },
+          { name: { en: "1 page", id: "1 halaman" }, url: "assets/docs/Aditya Bayu Pratama - CV ATS (1 Page).pdf" }
+        ]
+      }
+    ]
   },
 
   /* ---------- 2. HERO ---------- */

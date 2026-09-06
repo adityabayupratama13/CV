@@ -696,3 +696,23 @@ p{margin:0 0 1em}
   .exp{padding:40px 0}
   .prow{padding:14px 0}
 }
+
+/* ============ CV downloads (two editions) ============ */
+.cv-groups{margin-top:32px;border-top:1px solid rgba(255,255,255,.18);padding-top:20px;max-width:52ch}
+.mini-label.light{color:rgba(255,255,255,.5);margin:0 0 14px}
+.cv-group + .cv-group{margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1)}
+.cv-files{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px}
+.cv-label{
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#fff;
+  flex:0 0 175px;
+}
+.cv-files a{
+  font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--accent-soft);
+  border:1px solid color-mix(in srgb,var(--accent-soft) 40%,transparent);padding:6px 12px;
+  transition:background .25s,border-color .25s,color .25s;
+}
+.cv-files a:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.cv-note{margin:8px 0 0;font-size:13px;color:rgba(255,255,255,.55)}
+@media (max-width:640px){
+  .cv-label{flex:0 0 100%}
+}

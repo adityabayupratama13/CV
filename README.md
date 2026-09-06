@@ -36,7 +36,7 @@ role: { en: "Supervisor MES & IT Engineer", id: "Supervisor MES & IT Engineer" }
   A path that does not exist yet is hidden automatically — nothing breaks.
 - **Profile photo** → save as `assets/img/profile/aditya.jpg` (portrait 4:5). Until then the frame shows an "AB" monogram.
 - **Company logos** → `assets/img/experience/giken.png`, `cladtek.png`, `polibatam.png`.
-- **New CV PDF** → replace the files in `assets/docs/` (keep the same filenames, or update `meta.cv` / `meta.cvShort`).
+- **CV PDFs** → four files live in `assets/docs/`: a Professional edition (designed, sidebar layout) and an ATS edition (plain single column) in 1- and 2-page versions. `meta.cv` / `meta.cvShort` drive the big buttons; `meta.cvs` drives the grouped download list in the contact section. The HTML sources that generate them (`_cv1.html`, `_cv2.html`, `_cvpro1.html`, `_cvpro2.html`) stay out of git; print them with `chrome --headless=new --no-pdf-header-footer --print-to-pdf=out.pdf http://127.0.0.1:8765/_cvpro2.html`.
 
 Menu labels and section headings are in `UI` at the top of `app.js`.
 

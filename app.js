@@ -59,8 +59,7 @@ const UI = {
     focus:          { en: "Key focus", id: "Fokus utama" },
     enlarge:        { en: "Click to enlarge", id: "Klik untuk memperbesar" },
     watch:          { en: "Watch on YouTube", id: "Tonton di YouTube" },
-    onePager:       { en: "Prefer the one-page version?", id: "Lebih suka versi satu halaman?" },
-    onePagerCta:    { en: "Download the 1-page CV", id: "Unduh CV 1 halaman" },
+    cvHeading:      { en: "Curriculum vitae", id: "Curriculum vitae" },
     toTop:          { en: "Back to top", id: "Kembali ke atas" },
     showAll:        { en: "Show all", id: "Tampilkan semua" },
     showLess:       { en: "Show fewer", id: "Tampilkan lebih sedikit" },
@@ -413,9 +412,17 @@ function renderContact() {
             <a class="btn btn-primary" href="mailto:${CV.meta.email}">${t(L.emailCta)}</a>
             <a class="btn btn-ghost" href="${CV.meta.cv}" download>${t(L.downloadFull)}</a>
           </div>
-          <p class="contact-alt">${t(L.onePager)}
-            <a href="${CV.meta.cvShort}" download>${t(L.onePagerCta)} ↓</a>
-          </p>
+          <div class="cv-groups">
+            <p class="mini-label light">${t(L.cvHeading)}</p>
+            ${(CV.meta.cvs || []).map(g => `
+              <div class="cv-group">
+                <div class="cv-files">
+                  <span class="cv-label">${t(g.label)}</span>
+                  ${g.files.map(f => `<a href="${f.url}" download>${t(f.name)} ↓</a>`).join("")}
+                </div>
+                <p class="cv-note">${t(g.note)}</p>
+              </div>`).join("")}
+          </div>
         </div>
         <dl class="contact-list reveal">
           <div><dt>${t(L.email)}</dt><dd><a href="mailto:${CV.meta.email}">${CV.meta.email}</a></dd></div>
