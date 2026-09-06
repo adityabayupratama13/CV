@@ -25,8 +25,8 @@ const CV = {
     email: "adityabayupratama13@gmail.com",
     linkedin: "https://www.linkedin.com/in/aditya-bayu-pratama-00561314a",
     photo: "assets/img/profile/aditya.jpg",     // drop your photo here
-    cv: "assets/docs/Aditya Bayu Pratama_CV_2Page.pdf",
-    cvShort: "assets/docs/Aditya Bayu Pratama_CV_1Page.pdf"
+    cv: "assets/docs/Aditya Bayu Pratama - CV (2 Pages).pdf",
+    cvShort: "assets/docs/Aditya Bayu Pratama - CV (1 Page).pdf"
   },
 
   /* ---------- 2. HERO ---------- */
