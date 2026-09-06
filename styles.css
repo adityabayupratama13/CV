@@ -715,4 +715,6 @@ p{margin:0 0 1em}
 .cv-note{margin:8px 0 0;font-size:13px;color:rgba(255,255,255,.55)}
 @media (max-width:640px){
   .cv-label{flex:0 0 100%}
+  .cv-files{gap:8px}
+  .cv-files a{flex:1 1 0;display:inline-flex;justify-content:center;text-align:center}
 }
