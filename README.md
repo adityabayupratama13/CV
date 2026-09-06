@@ -30,8 +30,8 @@ role: { en: "Supervisor MES & IT", id: "Supervisor MES & IT" }
   - `images: ["a.png", "b.png", ...]` → the card runs a slideshow (all cards rotate together, every 4.2s); clicking it opens the lightbox with ← → and Esc.
   - `points: [{en, id}, ...]` → card with no image, rendered as a list.
   - `link: "https://..."` (+ `video: true`, `image:` a thumbnail) → the whole card becomes a link, with a play badge.
-- **Add a product implementation** → `products.categories[].companies[]` in `data.js`: company `name`, `logo`, and one or more `items` (product `name` + `image`). Product photos also open in the lightbox.
-- **Add a certificate** → copy one block inside `certifications: [ ]`. Put the verification link in `url`. Empty `url` = card shown but not clickable. `featured: true` adds a ★.
+- **Add a product implementation** → `products.categories[].companies[]` in `data.js`: company `name`, `logo`, and one or more `items` (product `name` + `image`). They render as an infographic-style table; thumbnails stay small on purpose so lower-resolution product photos still look sharp.
+- **Add a research question** → a block in `research.items` (`q`, `note`, `tags`). Add an `answer: { en, id }` when you have written the case up and the card swaps its "write-up in progress" tag for the answer.
 - **Add photos** → drop files in `assets/img/projects/` or `assets/img/experience/`, then set `image: "assets/img/projects/xxx.jpg"` or `images: ["...", "..."]`.
   A path that does not exist yet is hidden automatically — nothing breaks.
 - **Profile photo** → save as `assets/img/profile/aditya.jpg` (portrait 4:5). Until then the frame shows an "AB" monogram.

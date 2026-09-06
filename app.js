@@ -6,6 +6,7 @@ const UI = {
     experience:     { en: "Experience",     id: "Pengalaman" },
     projects:       { en: "Projects",       id: "Proyek" },
     products:       { en: "Products",       id: "Produk" },
+    research:       { en: "Research",       id: "Riset" },
     skills:         { en: "Expertise",      id: "Keahlian" },
     education:      { en: "Education",      id: "Pendidikan" },
     certifications: { en: "Certifications", id: "Sertifikasi" },
@@ -17,6 +18,7 @@ const UI = {
     experience:     { en: "Professional Experience", id: "Pengalaman Profesional" },
     projects:       { en: "Selected Projects",    id: "Proyek Terpilih" },
     products:       { en: "Product Implementations", id: "Implementasi Produk" },
+    research:       { en: "Research & Innovation",  id: "Riset & Inovasi" },
     skills:         { en: "Core Expertise",       id: "Keahlian Utama" },
     education:      { en: "Education",            id: "Pendidikan" },
     certifications: { en: "Licenses & Certifications", id: "Lisensi & Sertifikasi" },
@@ -29,6 +31,8 @@ const UI = {
                   id: "Karya yang mencakup manufacturing execution, machine vision, robotika, dan AI terapan." },
     products:   { en: "Production lines I handled — from LiDAR cameras and power stations to cardiac monitors.",
                   id: "Lini produksi yang saya tangani — dari kamera LiDAR dan power station hingga monitor jantung." },
+    research:   { en: "Open questions I am working on, and how applied AI is closing them.",
+                  id: "Pertanyaan terbuka yang sedang saya kerjakan, dan bagaimana AI terapan menutupnya." },
     skills:     { en: "From embedded hardware to enterprise software and the teams that run them.",
                   id: "Dari hardware embedded hingga software enterprise dan tim yang menjalankannya." },
     certifications: { en: "Verified credentials across data analytics, industrial control and modern engineering practice.",
@@ -37,7 +41,7 @@ const UI = {
   labels: {
     viewCredential: { en: "View credential", id: "Lihat kredensial" },
     credentialId:   { en: "Credential ID",   id: "ID Kredensial" },
-    noLink:         { en: "On file",         id: "Arsip pribadi" },
+    noLink:         { en: "Certificate on file", id: "Sertifikat arsip" },
     email:          { en: "Email",           id: "Email" },
     phone:          { en: "Phone",           id: "Telepon" },
     linkedin:       { en: "LinkedIn",        id: "LinkedIn" },
@@ -51,7 +55,12 @@ const UI = {
     highlights:     { en: "Key highlights", id: "Sorotan utama" },
     focus:          { en: "Key focus", id: "Fokus utama" },
     enlarge:        { en: "Click to enlarge", id: "Klik untuk memperbesar" },
-    watch:          { en: "Watch on YouTube", id: "Tonton di YouTube" }
+    watch:          { en: "Watch on YouTube", id: "Tonton di YouTube" },
+    degree:         { en: "Degree", id: "Program" },
+    institution:    { en: "Institution", id: "Institusi" },
+    period:         { en: "Period", id: "Periode" },
+    result:         { en: "Result", id: "Hasil" },
+    question:       { en: "Research question", id: "Pertanyaan riset" }
   }
 };
 
@@ -221,37 +230,61 @@ function renderProjects() {
 
 function renderProducts() {
   const P = CV.products;
-  const cats = P.categories.map(c => {
-    const cards = c.companies.flatMap(co => co.items.map(it => `
-      <figure class="prod reveal">
-        <div class="slides prod-shot">
-          <img class="slide on" src="${it.image}" alt="${t(it.name)}" loading="lazy" onerror="this.remove()">
-          <span class="badge hint">${t(UI.labels.enlarge)}</span>
-        </div>
-        <figcaption>
+  const cols = P.categories.map(c => {
+    const rows = c.companies.flatMap(co => co.items.map(it => `
+      <div class="prow">
+        <div class="pthumb"><img src="${it.image}" alt="${t(it.name)}" loading="lazy" onerror="this.remove()"></div>
+        <div class="pinfo">
           <h4>${t(it.name)}</h4>
           <div class="prod-brand">
             <img src="${co.logo}" alt="${co.name}" loading="lazy" onerror="this.remove()">
             <span>${co.name}</span>
           </div>
-        </figcaption>
-      </figure>`)).join("");
+        </div>
+      </div>`)).join("");
     return `
-      <div class="prod-cat reveal">
-        <h3 class="prod-cat-name">${t(c.name)}</h3>
-        <div class="prod-grid">${cards}</div>
+      <div class="pcol reveal">
+        <p class="pcol-head">${t(c.name)}</p>
+        <div class="pcol-body">${rows}</div>
       </div>`;
   }).join("");
   return `
   <section id="products" class="section alt">
     <div class="wrap">
       ${head("products")}
-      <p class="products-intro reveal">${t(P.intro)}</p>
-      <div class="slides products-overview reveal">
-        <img class="slide on" src="${P.overview}" alt="Product implementations overview" loading="lazy" onerror="this.parentElement.remove()">
-        <span class="badge hint">${t(UI.labels.enlarge)}</span>
+      <p class="section-intro reveal">${t(P.intro)}</p>
+      <div class="ptable">${cols}</div>
+    </div>
+  </section>`;
+}
+
+function renderResearch() {
+  const R = CV.research;
+  const paras = R.intro.map(x => `<p>${t(x)}</p>`).join("");
+  const items = R.items.map((it, i) => `
+    <article class="rq reveal">
+      <span class="rq-no">${String(i + 1).padStart(2, "0")}</span>
+      <div class="rq-body">
+        <h3>${t(it.q)}</h3>
+        <p>${t(it.note)}</p>
+        <div class="rq-foot">
+          <div class="tags">${(it.tags || []).map(x => `<span class="tag">${x}</span>`).join("")}</div>
+          <span class="rq-status">${t(it.answer ? UI.labels.result : R.status)}</span>
+        </div>
+        ${it.answer ? `<p class="rq-answer">${t(it.answer)}</p>` : ""}
       </div>
-      ${cats}
+    </article>`).join("");
+  return `
+  <section id="research" class="section research">
+    <div class="wrap">
+      ${head("research")}
+      <div class="research-grid">
+        <div class="research-note reveal">
+          <h3 class="lead">${t(R.headline)}</h3>
+          ${paras}
+        </div>
+        <div class="rq-list">${items}</div>
+      </div>
     </div>
   </section>`;
 }
@@ -269,16 +302,18 @@ function renderSkills() {
 }
 
 function renderEducation() {
+  const L = UI.labels;
   const items = CV.education.map(e => `
     <article class="edu reveal">
-      <div class="img-wrap logo">${img(e.logo, "", e.school)}</div>
-      <div>
+      <header class="edu-head">
         <h3>${e.school}</h3>
-        <p class="edu-degree">${t(e.degree)}</p>
-        <p class="edu-meta">${t(e.period)} · ${t(e.grade)}</p>
-        <p class="kicker sm">${t(UI.labels.focus)}</p>
-        <p class="edu-focus">${t(e.focus)}</p>
-      </div>
+        <span class="edu-period">${t(e.period)}</span>
+      </header>
+      <dl class="edu-rows">
+        <div><dt>${t(L.degree)}</dt><dd>${t(e.degree)}</dd></div>
+        <div><dt>${t(L.result)}</dt><dd>${t(e.grade)}</dd></div>
+        <div><dt>${t(L.focus)}</dt><dd>${t(e.focus)}</dd></div>
+      </dl>
     </article>`).join("");
   return `
   <section id="education" class="section">
@@ -356,7 +391,8 @@ function render() {
   document.getElementById("header").innerHTML = renderHeader();
   document.getElementById("main").innerHTML =
     renderHero() + renderProfile() + renderExperience() + renderProjects() +
-    renderProducts() + renderSkills() + renderEducation() + renderCerts() + renderContact();
+    renderProducts() + renderResearch() + renderSkills() + renderEducation() +
+    renderCerts() + renderContact();
   wire();
   observe();
 }
@@ -382,6 +418,8 @@ function observe() {
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
   }), { threshold: 0.12 });
+  document.querySelectorAll(".pgrid > *, .cert-grid > *, .ptable > *, .rq-list > *")
+    .forEach((el, i) => el.style.transitionDelay = ((i % 3) * 0.08).toFixed(2) + "s");
   document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
   const links = [...document.querySelectorAll(".nav-link")];

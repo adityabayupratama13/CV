@@ -46,10 +46,10 @@ const CV = {
 
   /* ---------- 3. HEADLINE METRICS ---------- */
   metrics: [
-    { value: "7+",    label: { en: "Years in smart manufacturing", id: "Tahun di smart manufacturing" } },
-    { value: "500+",  label: { en: "Product models governed by MES", id: "Model produk dikelola MES" } },
+    { value: "7+",    label: { en: "Years in smart manufacturing", id: "Tahun di bidang smart manufacturing" } },
+    { value: "500+",  label: { en: "Product models governed by MES", id: "Model produk dikelola oleh MES" } },
     { value: "5",     label: { en: "Engineers led & mentored", id: "Engineer dipimpin & dibina" } },
-    { value: "99.9%", label: { en: "Core server uptime sustained", id: "Uptime server inti terjaga" } }
+    { value: "99.9%", label: { en: "Core server uptime sustained", id: "Uptime server inti yang terjaga" } }
   ],
 
   /* ---------- 4. PROFILE ---------- */
@@ -69,7 +69,7 @@ const CV = {
       },
       {
         en: "Holds a Bachelor of Applied Science in Mechatronics Engineering (Cum Laude, GPA 3.81) and is adept at bridging embedded hardware, enterprise software and AI-driven automation.",
-        id: "Lulusan Sarjana Terapan Teknik Mekatronika (Cum Laude, IPK 3.81) dan terbiasa menjembatani hardware embedded, software enterprise, serta otomasi berbasis AI."
+        id: "Lulusan Sarjana Terapan Teknik Mekatronika (Cum Laude, IPK 3,81) dan terbiasa menjembatani hardware embedded, software enterprise, serta otomasi berbasis AI."
       }
     ],
     facts: [
@@ -113,8 +113,8 @@ const CV = {
         id: "Promosi dari Lead Software & IT Engineer · Software & IT Engineer · Software Test Engineer · New Product Introduction Engineer"
       },
       summary: {
-        en: "Own the MES and IT roadmap for a high-precision electronics plant: architecture, delivery, infrastructure and the engineering team behind it.",
-        id: "Bertanggung jawab atas roadmap MES dan IT di pabrik elektronik presisi tinggi: arsitektur, delivery, infrastruktur, serta tim engineering di belakangnya."
+        en: "Responsible for the MES and IT roadmap of a high-precision electronics plant — its architecture, delivery, infrastructure and the engineering team behind it.",
+        id: "Bertanggung jawab atas peta jalan MES dan IT di pabrik elektronik presisi tinggi — mulai dari arsitektur, pengembangan, infrastruktur, hingga tim engineering di belakangnya."
       },
       bullets: [
         {
@@ -129,8 +129,8 @@ const CV = {
         },
         {
           t: { en: "Industrial IoT gate & ESD safety automation", id: "Gate Industrial IoT & otomasi keselamatan ESD" },
-          d: { en: "Engineered an automated ESD wristband monitoring gate with Arduino, C# and MySQL, enforcing 100% compliance before line entry and tracking hardware defect rates.",
-               id: "Merekayasa auto-gate pemantau wristband ESD berbasis Arduino, C#, dan MySQL yang memastikan kepatuhan 100% sebelum masuk lini serta memantau tingkat kerusakan perangkat." }
+          d: { en: "Built an automated ESD wristband monitoring gate with Arduino, C# and MySQL that enforces 100% compliance before line entry and tracks wristband defect rates.",
+               id: "Membangun auto-gate pemantau wristband ESD berbasis Arduino, C#, dan MySQL yang memastikan kepatuhan 100% sebelum masuk lini sekaligus memantau tingkat kerusakan wristband." }
         },
         {
           t: { en: "Automated thermal label printing pipeline", id: "Pipeline cetak label termal otomatis" },
@@ -150,7 +150,7 @@ const CV = {
         {
           t: { en: "Mission-critical incident response", id: "Penanganan insiden kritis" },
           d: { en: "Contained a worm malware outbreak across 20 laptops within 3 hours with no production downtime; diagnosed kernel and power faults on core MySQL servers to sustain 99.9% uptime; resolved factory network outages under 15-minute SLAs.",
-               id: "Menuntaskan wabah malware worm pada 20 laptop dalam 3 jam tanpa downtime produksi; mendiagnosis gangguan kernel dan power pada server MySQL inti hingga uptime 99,9%; menyelesaikan gangguan jaringan pabrik dalam SLA 15 menit." }
+               id: "Menangani dan menuntaskan serangan malware worm pada 20 laptop dalam 3 jam tanpa menghentikan produksi; mendiagnosis gangguan kernel dan daya pada server MySQL inti sehingga uptime terjaga di 99,9%; memulihkan gangguan jaringan pabrik dalam SLA 15 menit." }
         }
       ],
       tags: ["C# / .NET", "MySQL", "React.js", "MES", "IIoT", "Arduino", "Network Infrastructure", "Team Leadership"],
@@ -170,8 +170,8 @@ const CV = {
       bullets: [
         {
           t: { en: "Autonomous welding defect inspection robot", id: "Robot inspeksi defect pengelasan otonom" },
-          d: { en: "Engineered a pipe-inspection robot using C#, Raspberry Pi, Lidar and specialised light sensors to navigate autonomously inside industrial pipes, streaming live video while calculating defect location and severity.",
-               id: "Merekayasa robot inspeksi pipa berbasis C#, Raspberry Pi, Lidar, dan sensor cahaya khusus yang bernavigasi otonom di dalam pipa industri, mengalirkan video langsung sekaligus menghitung lokasi dan tingkat keparahan defect." }
+          d: { en: "Built a pipe-inspection robot with C#, Raspberry Pi, Lidar and specialised light sensors that navigates autonomously inside industrial pipes, streaming live video while calculating the location and severity of each weld defect.",
+               id: "Membangun robot inspeksi pipa berbasis C#, Raspberry Pi, Lidar, dan sensor cahaya khusus yang bernavigasi otonom di dalam pipa industri sambil mengirim video langsung serta menghitung lokasi dan tingkat keparahan setiap cacat las." }
         },
         {
           t: { en: "High-speed data acquisition protocols", id: "Protokol akuisisi data berkecepatan tinggi" },
@@ -385,10 +385,9 @@ const CV = {
   /* ---------- 7b. PRODUCT IMPLEMENTATIONS ---------- */
   products: {
     intro: {
-      en: "Products whose production lines I handled at Giken Precision Indonesia — building the traceability system and digitalising the process behind each one, from high-end electronics to medical devices.",
-      id: "Produk yang lini produksinya saya tangani di Giken Precision Indonesia — membangun sistem traceability dan mendigitalkan prosesnya, mulai dari elektronik high-end hingga perangkat medis."
+      en: "Every product below runs on a production line I handled at Giken Precision Indonesia: I built its traceability system and digitalised the process behind it, from high-end electronics to certified medical devices.",
+      id: "Setiap produk di bawah ini berjalan pada lini produksi yang saya tangani di Giken Precision Indonesia: saya membangun sistem traceability-nya dan mendigitalkan proses di baliknya, dari elektronik high-end hingga perangkat medis bersertifikasi."
     },
-    overview: "assets/img/products/overview.png",
     categories: [
       {
         name: { en: "High-End Products", id: "Produk High-End" },
@@ -426,6 +425,55 @@ const CV = {
               { name: { en: "Tree Tilt Sensor", id: "Sensor Kemiringan Pohon" }, image: "assets/img/products/styl-solutions/tree-tilt-sensor.png" }
             ] }
         ]
+      }
+    ]
+  },
+
+
+  /* ---------- 7c. RESEARCH & INNOVATION ----------
+     `answer` is optional: leave it out and the card shows the status tag
+     instead. Fill it in when you have written the case up. */
+  research: {
+    headline: {
+      en: "Two years of applied AI research, turned into systems that run on the factory floor.",
+      id: "Dua tahun riset AI terapan, diwujudkan menjadi sistem yang berjalan di lantai produksi."
+    },
+    intro: [
+      {
+        en: "For the past two years I have followed AI research, releases and industry agendas closely — not as a spectator, but as a practitioner. Every model or technique worth trusting goes straight into how I work: in system design, in code, and in the daily decisions of running MES and IT.",
+        id: "Dalam dua tahun terakhir saya mengikuti riset, rilis, dan agenda industri AI secara serius — bukan sebagai penonton, melainkan sebagai praktisi. Setiap model atau teknik yang layak dipercaya langsung saya terapkan dalam cara kerja saya: pada desain sistem, pada kode, dan pada keputusan harian mengelola MES dan IT."
+      },
+      {
+        en: "With a background in manufacturing digital transformation and programming, AI has closed gaps that stayed open for years — problems that were previously blocked by the limits of one person's knowledge or time. Ideas that used to stall at the proposal stage now reach production.",
+        id: "Dengan latar belakang transformasi digital manufaktur dan pemrograman, AI menutup celah yang bertahun-tahun terbuka — persoalan yang sebelumnya terhalang oleh keterbatasan pengetahuan atau waktu satu orang. Gagasan yang dulu berhenti di tahap usulan kini sampai ke produksi."
+      },
+      {
+        en: "This section is my working log: the questions I am researching, the problems behind them, and the solutions as they take shape.",
+        id: "Bagian ini adalah catatan kerja saya: pertanyaan yang sedang saya teliti, persoalan di baliknya, dan solusinya seiring terbentuk."
+      }
+    ],
+    status: { en: "Write-up in progress", id: "Rangkuman sedang disusun" },
+    items: [
+      {
+        q: { en: "How to get real-time Panasonic SMT NPM machine data?",
+             id: "Bagaimana mendapatkan data mesin Panasonic SMT NPM secara real-time?" },
+        note: { en: "Reading production data directly from the machine layer instead of manual logs and end-of-shift exports.",
+                id: "Membaca data produksi langsung dari lapisan mesin, bukan dari catatan manual dan ekspor akhir shift." },
+        tags: ["IIoT", "Panasonic NPM", "Data Acquisition"]
+      },
+      {
+        q: { en: "How to read 100+ BOM formats and transform them into one general format?",
+             id: "Bagaimana membaca 100+ format BOM dan mengubahnya menjadi satu format umum?" },
+        note: { en: "Every customer sends a different bill of materials layout; the line needs a single normalised schema it can trust.",
+                id: "Setiap pelanggan mengirim tata letak bill of materials yang berbeda; lini produksi membutuhkan satu skema baku yang dapat diandalkan." },
+        tags: ["Data Parsing", "Normalisation", "AI-Assisted"]
+      },
+      {
+        q: { en: "How to automatically link refill material, feeder calibration and material pickup?",
+             id: "Bagaimana menghubungkan refill material, kalibrasi feeder, dan material pickup secara otomatis?" },
+        note: { en: "Three systems, one physical feeder — giving it a single identity end to end makes traceability and asset control real.",
+                id: "Tiga sistem, satu feeder fisik — memberinya satu identitas dari hulu ke hilir membuat traceability dan kontrol aset benar-benar berjalan." },
+        tags: ["Traceability", "MES", "Asset Control"]
       }
     ]
   },
@@ -540,7 +588,7 @@ const CV = {
 
   /* ---------- 11. CONTACT ---------- */
   contact: {
-    heading: { en: "Let us build the next system.", id: "Mari bangun sistem berikutnya." },
+    heading: { en: "Let's build the next system.", id: "Mari bangun sistem berikutnya." },
     body: {
       en: "Open to leadership and specialist roles in MES, smart manufacturing, industrial automation and enterprise IT — on-site, hybrid or remote.",
       id: "Terbuka untuk peran kepemimpinan maupun spesialis di bidang MES, smart manufacturing, otomasi industri, dan IT enterprise — on-site, hybrid, maupun remote."

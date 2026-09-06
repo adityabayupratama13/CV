@@ -65,9 +65,9 @@ p{margin:0 0 1em}
 .brand-text{display:flex;flex-direction:column;line-height:1.25}
 .brand-text strong{font-size:14px;font-weight:600;letter-spacing:.01em}
 .brand-text em{font-style:normal;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.65}
-.nav{display:flex;gap:28px}
+.nav{display:flex;gap:21px}
 .nav-link{
-  font-size:13px;letter-spacing:.04em;opacity:.72;position:relative;padding:4px 0;
+  font-size:12.5px;letter-spacing:.02em;opacity:.72;position:relative;padding:4px 0;white-space:nowrap;
   transition:opacity .25s;
 }
 .nav-link:hover{opacity:1}
@@ -185,7 +185,7 @@ p{margin:0 0 1em}
 
 /* ============ experience ============ */
 .exp-list{display:grid;gap:0}
-.exp{display:grid;grid-template-columns:260px 1fr;gap:56px;padding:56px 0;border-top:1px solid var(--line)}
+.exp{display:grid;grid-template-columns:220px 1fr;gap:48px;padding:56px 0;border-top:1px solid var(--line)}
 .exp:first-child{border-top:0;padding-top:0}
 .logo{width:74px;height:74px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;padding:10px;margin-bottom:18px}
 .logo img{object-fit:contain;max-height:100%}
@@ -231,18 +231,11 @@ p{margin:0 0 1em}
 
 /* ============ skills ============ */
 .skill-grid{display:grid;gap:0}
-.skill-group{padding:34px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:260px 1fr;gap:56px;align-items:start}
+.skill-group{padding:30px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:baseline}
 .skill-group:first-child{border-top:0}
 .skill-group h3{font-size:17px;letter-spacing:.02em}
 .skill-group .tags{margin:0}
 .skill-group .tag{background:transparent}
-
-/* ============ education ============ */
-.edu{display:grid;grid-template-columns:120px 1fr;gap:48px;align-items:start}
-.edu h3{font-size:22px}
-.edu-degree{margin:8px 0 6px;color:var(--text-2)}
-.edu-meta{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600}
-.edu-focus{color:var(--text-2);max-width:70ch;margin:0}
 
 /* ============ certifications ============ */
 .cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
@@ -343,7 +336,7 @@ p{margin:0 0 1em}
 }
 .badge.count{top:12px;right:12px}
 .badge.hint{bottom:12px;left:12px;opacity:0;transition:opacity .3s ease}
-.pcard:hover .badge.hint,.prod:hover .badge.hint,.products-overview:hover .badge.hint{opacity:1}
+.pcard:hover .badge.hint{opacity:1}
 .play{
   position:absolute;z-index:2;inset:0;margin:auto;width:62px;height:62px;border-radius:50%;
   background:rgba(255,255,255,.92);display:grid;place-items:center;
@@ -356,31 +349,6 @@ p{margin:0 0 1em}
 .plist{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:9px}
 .plist li{position:relative;padding-left:20px;font-size:14px;color:var(--text-2)}
 .plist li::before{content:"";position:absolute;left:0;top:10px;width:9px;height:1px;background:var(--accent)}
-
-/* ============ product implementations ============ */
-.products-intro{max-width:64ch;color:var(--text-2);margin:-28px 0 34px}
-.products-overview{
-  aspect-ratio:auto;background:var(--surface);border:1px solid var(--line);margin-bottom:26px;
-}
-.products-overview .slide{position:static;opacity:1;height:auto;padding:18px}
-.prod-cat{margin-top:46px}
-.prod-cat-name{
-  font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);
-  padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:22px;
-}
-.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
-.prod{
-  margin:0;background:var(--surface);border:1px solid var(--line);
-  transition:transform .35s ease,box-shadow .35s ease,border-color .35s;
-}
-.prod:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:color-mix(in srgb,var(--accent) 40%,var(--line))}
-.prod-shot{aspect-ratio:4/3;background:#fff}
-.prod-shot .slide{padding:16px}
-.prod figcaption{padding:16px 18px 18px}
-.prod h4{font-size:15px;line-height:1.3}
-.prod-brand{display:flex;align-items:center;gap:10px;margin-top:12px}
-.prod-brand img{height:22px;width:auto;max-width:76px;object-fit:contain;background:#fff;padding:3px;border-radius:2px}
-.prod-brand span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-2);font-weight:600}
 
 /* ============ lightbox ============ */
 #lb{
@@ -410,3 +378,85 @@ p{margin:0 0 1em}
   .prod-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
 }
 @media (prefers-reduced-motion:reduce){ .slide{transition:none} }
+
+/* ============ section intro ============ */
+.section-intro{max-width:66ch;color:var(--text-2);margin:-34px 0 48px}
+
+/* ============ product implementations (table) ============ */
+.ptable{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.pcol{border-right:1px solid var(--line);padding:26px 26px 8px}
+.pcol:first-child{padding-left:0}
+.pcol:last-child{border-right:0;padding-right:0}
+.pcol-head{
+  display:inline-block;margin:0 0 8px;padding:7px 14px;background:var(--accent);color:#fff;
+  font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;
+}
+.prow{display:flex;align-items:center;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
+.pcol-body .prow:first-child{border-top:0}
+.pthumb{
+  width:88px;height:88px;flex:0 0 auto;background:#fff;border:1px solid var(--line);
+  display:grid;place-items:center;padding:9px;transition:transform .35s ease,border-color .35s;
+}
+.prow:hover .pthumb{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.pthumb img{max-width:100%;max-height:100%;object-fit:contain}
+.pinfo h4{font-size:14.5px;line-height:1.3}
+.prod-brand{display:flex;align-items:center;gap:9px;margin-top:10px}
+.prod-brand img{height:20px;width:auto;max-width:70px;object-fit:contain;background:#fff;padding:3px;border-radius:2px}
+.prod-brand span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-2);font-weight:600}
+
+/* ============ research & innovation ============ */
+.research-grid{display:grid;grid-template-columns:minmax(260px,.82fr) 1.18fr;gap:64px;align-items:start}
+.research-note{position:sticky;top:104px}
+.research-note p{color:var(--text-2);max-width:52ch;font-size:15px}
+.rq-list{border-top:1px solid var(--line)}
+.rq{
+  display:grid;grid-template-columns:54px 1fr;gap:18px;padding:26px 0;
+  border-bottom:1px solid var(--line);transition:background .35s ease;
+}
+.rq:hover{background:color-mix(in srgb,var(--accent) 6%,transparent)}
+.rq-no{font-family:var(--serif);font-size:24px;line-height:1;color:var(--accent)}
+.rq-body h3{font-size:18px;line-height:1.35;margin-bottom:10px;max-width:40ch}
+.rq-body p{font-size:14.5px;color:var(--text-2);margin:0 0 16px;max-width:62ch}
+.rq-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.rq-foot .tags{margin:0}
+.rq-status{
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--accent);
+  border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);padding:6px 11px;white-space:nowrap;
+}
+.rq-answer{margin:16px 0 0;color:var(--text-2);max-width:62ch}
+
+/* ============ education (aligned rows) ============ */
+.edu{border-top:1px solid var(--line);padding-top:28px}
+.edu-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:14px}
+.edu-head h3{font-size:clamp(20px,2.2vw,26px)}
+.edu-period{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.edu-rows{margin:0}
+.edu-rows > div{display:grid;grid-template-columns:200px 1fr;gap:32px;padding:16px 0;border-top:1px solid var(--line)}
+.edu-rows dt{margin:0;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-2)}
+.edu-rows dd{margin:0;max-width:74ch}
+
+/* ============ responsive (new blocks) ============ */
+@media (max-width:1120px){
+  .nav{
+    position:absolute;top:100%;right:0;left:0;flex-direction:column;gap:0;
+    background:var(--bg);border-bottom:1px solid var(--line);padding:0 32px;
+    max-height:0;overflow:hidden;transition:max-height .4s ease;color:var(--text);
+  }
+  .nav.open{max-height:520px;padding:12px 32px 20px}
+  .nav-link{padding:12px 0;border-bottom:1px solid var(--line);opacity:1;font-size:13px}
+  .menu-btn{display:grid}
+  .ptable{grid-template-columns:repeat(2,1fr)}
+  .pcol{padding:26px 22px 8px}
+  .pcol:nth-child(2n){border-right:0;padding-right:0}
+  .pcol:nth-child(2n+1){padding-left:0}
+  .pcol:nth-child(n+3){border-top:1px solid var(--line)}
+  .research-grid{grid-template-columns:1fr;gap:40px}
+  .research-note{position:static}
+}
+@media (max-width:640px){
+  .ptable{grid-template-columns:1fr}
+  .pcol{border-right:0;padding:24px 0 8px;border-top:1px solid var(--line)}
+  .pcol:first-child{border-top:0}
+  .edu-rows > div{grid-template-columns:1fr;gap:6px}
+  .rq{grid-template-columns:36px 1fr;gap:12px}
+}
