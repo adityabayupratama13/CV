@@ -33,6 +33,8 @@ const UI = {
                   id: "Lini produksi yang saya tangani — dari kamera LiDAR dan power station hingga monitor jantung." },
     research:   { en: "Open questions I am working on, and how applied AI is closing them.",
                   id: "Pertanyaan terbuka yang sedang saya kerjakan, dan bagaimana AI terapan menutupnya." },
+    education:  { en: "An applied engineering degree built on mechatronics, robotics and automation.",
+                  id: "Pendidikan vokasi terapan yang dibangun di atas mekatronika, robotika, dan otomasi." },
     skills:     { en: "From embedded hardware to enterprise software and the teams that run them.",
                   id: "Dari hardware embedded hingga software enterprise dan tim yang menjalankannya." },
     certifications: { en: "Verified credentials across data analytics, industrial control and modern engineering practice.",
@@ -43,6 +45,7 @@ const UI = {
     credentialId:   { en: "Credential ID",   id: "ID Kredensial" },
     noLink:         { en: "Certificate on file", id: "Sertifikat arsip" },
     email:          { en: "Email",           id: "Email" },
+    emailCta:       { en: "Email me",        id: "Kirim email" },
     phone:          { en: "Phone",           id: "Telepon" },
     linkedin:       { en: "LinkedIn",        id: "LinkedIn" },
     location:       { en: "Location",        id: "Lokasi" },
@@ -288,12 +291,12 @@ function renderResearch() {
     <article class="rq reveal">
       <span class="rq-no">${String(i + 1).padStart(2, "0")}</span>
       <div class="rq-body">
-        <h3>${t(it.q)}</h3>
-        <p>${t(it.note)}</p>
-        <div class="rq-foot">
-          <div class="tags">${(it.tags || []).map(x => `<span class="tag">${x}</span>`).join("")}</div>
+        <div class="rq-head">
+          <h3>${t(it.q)}</h3>
           <span class="rq-status">${t(it.answer ? UI.labels.result : R.status)}</span>
         </div>
+        <p>${t(it.note)}</p>
+        <div class="tags">${(it.tags || []).map(x => `<span class="tag">${x}</span>`).join("")}</div>
         ${it.answer ? `<p class="rq-answer">${t(it.answer)}</p>` : ""}
       </div>
     </article>`).join("");
@@ -391,7 +394,7 @@ function renderContact() {
           <h2 class="contact-head">${t(CV.contact.heading)}</h2>
           <p class="contact-body">${t(CV.contact.body)}</p>
           <div class="hero-cta">
-            <a class="btn btn-primary" href="mailto:${CV.meta.email}">${t(L.email)}</a>
+            <a class="btn btn-primary" href="mailto:${CV.meta.email}">${t(L.emailCta)}</a>
             <a class="btn btn-ghost" href="${CV.meta.cv}" download>${t(L.downloadFull)}</a>
           </div>
         </div>

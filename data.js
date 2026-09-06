@@ -33,8 +33,8 @@ const CV = {
   hero: {
     kicker: { en: "Software & IT Engineering Leadership", id: "Kepemimpinan Software & IT Engineering" },
     headline: {
-      en: "Turning factory floors into<br>connected, data-driven systems.",
-      id: "Mengubah lantai produksi menjadi<br>sistem terkoneksi berbasis data."
+      en: "Turning factory floors into connected, data-driven systems.",
+      id: "Mengubah lantai produksi menjadi sistem terkoneksi berbasis data."
     },
     intro: {
       en: "7+ years architecting Manufacturing Execution Systems, Industrial IoT and machine vision for high-precision electronics and oil & gas. Two-time global 1st place winner of the Giken Value Engineering Award.",
