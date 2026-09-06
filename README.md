@@ -26,7 +26,11 @@ Everything is in `data.js`. Each text is a pair:
 role: { en: "Supervisor MES & IT", id: "Supervisor MES & IT" }
 ```
 
-- **Add a project** → copy one `{ ... }` block inside `projects: [ ]`.
+- **Add a project** → copy one `{ ... }` block inside `projects: [ ]`. Three card types:
+  - `images: ["a.png", "b.png", ...]` → the card runs a slideshow (all cards rotate together, every 4.2s); clicking it opens the lightbox with ← → and Esc.
+  - `points: [{en, id}, ...]` → card with no image, rendered as a list.
+  - `link: "https://..."` (+ `video: true`, `image:` a thumbnail) → the whole card becomes a link, with a play badge.
+- **Add a product implementation** → `products.categories[].companies[]` in `data.js`: company `name`, `logo`, and one or more `items` (product `name` + `image`). Product photos also open in the lightbox.
 - **Add a certificate** → copy one block inside `certifications: [ ]`. Put the verification link in `url`. Empty `url` = card shown but not clickable. `featured: true` adds a ★.
 - **Add photos** → drop files in `assets/img/projects/` or `assets/img/experience/`, then set `image: "assets/img/projects/xxx.jpg"` or `images: ["...", "..."]`.
   A path that does not exist yet is hidden automatically — nothing breaks.
@@ -46,4 +50,4 @@ certificates have no public link, so their `url` is empty — upload a scan to
 ## Deploy (Netlify)
 
 Drag this whole folder onto https://app.netlify.com/drop, or connect a Git repo.
-`Material/` can be deleted before deploying — the PDFs are already copied into `assets/docs/`.
+`Material/` is git-ignored: it holds the original full-resolution sources. The site uses the copies in `assets/img/` and `assets/docs/`.

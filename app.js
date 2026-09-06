@@ -5,6 +5,7 @@ const UI = {
     profile:        { en: "Profile",        id: "Profil" },
     experience:     { en: "Experience",     id: "Pengalaman" },
     projects:       { en: "Projects",       id: "Proyek" },
+    products:       { en: "Products",       id: "Produk" },
     skills:         { en: "Expertise",      id: "Keahlian" },
     education:      { en: "Education",      id: "Pendidikan" },
     certifications: { en: "Certifications", id: "Sertifikasi" },
@@ -15,6 +16,7 @@ const UI = {
     awards:         { en: "Honors & Awards",      id: "Penghargaan" },
     experience:     { en: "Professional Experience", id: "Pengalaman Profesional" },
     projects:       { en: "Selected Projects",    id: "Proyek Terpilih" },
+    products:       { en: "Product Implementations", id: "Implementasi Produk" },
     skills:         { en: "Core Expertise",       id: "Keahlian Utama" },
     education:      { en: "Education",            id: "Pendidikan" },
     certifications: { en: "Licenses & Certifications", id: "Lisensi & Sertifikasi" },
@@ -25,6 +27,8 @@ const UI = {
                   id: "Tujuh tahun membangun dan menjalankan sistem yang menjadi tumpuan pabrik presisi." },
     projects:   { en: "Work spanning manufacturing execution, machine vision, robotics and applied AI.",
                   id: "Karya yang mencakup manufacturing execution, machine vision, robotika, dan AI terapan." },
+    products:   { en: "Production lines I handled — from LiDAR cameras and power stations to cardiac monitors.",
+                  id: "Lini produksi yang saya tangani — dari kamera LiDAR dan power station hingga monitor jantung." },
     skills:     { en: "From embedded hardware to enterprise software and the teams that run them.",
                   id: "Dari hardware embedded hingga software enterprise dan tim yang menjalankannya." },
     certifications: { en: "Verified credentials across data analytics, industrial control and modern engineering practice.",
@@ -45,7 +49,9 @@ const UI = {
     theme:          { en: "Toggle theme", id: "Ganti tema" },
     menu:           { en: "Menu", id: "Menu" },
     highlights:     { en: "Key highlights", id: "Sorotan utama" },
-    focus:          { en: "Key focus", id: "Fokus utama" }
+    focus:          { en: "Key focus", id: "Fokus utama" },
+    enlarge:        { en: "Click to enlarge", id: "Klik untuk memperbesar" },
+    watch:          { en: "Watch on YouTube", id: "Tonton di YouTube" }
   }
 };
 
@@ -175,24 +181,78 @@ function renderExperience() {
   </section>`;
 }
 
+function media(p) {
+  const imgs = (p.images && p.images.length) ? p.images : (p.image ? [p.image] : []);
+  if (!imgs.length) return "";
+  const slides = imgs.map((src, i) =>
+    `<img class="slide${i ? "" : " on"}" src="${src}" alt="${t(p.title)}" loading="lazy" onerror="this.remove()">`).join("");
+  return `<div class="slides${p.link ? " nolb" : ""}">
+      ${slides}
+      ${imgs.length > 1 ? `<span class="badge count"><b>1</b>/${imgs.length}</span>` : ""}
+      <span class="badge hint">${p.video ? t(UI.labels.watch) + " ↗" : t(UI.labels.enlarge)}</span>
+      ${p.video ? `<span class="play" aria-hidden="true"></span>` : ""}
+    </div>`;
+}
+
 function renderProjects() {
   const cards = CV.projects.map(p => {
     const tags = (p.tags || []).map(x => `<span class="tag">${x}</span>`).join("");
+    const points = (p.points || []).length
+      ? `<ul class="plist">${p.points.map(x => `<li>${t(x)}</li>`).join("")}</ul>` : "";
     const inner = `
-      <div class="img-wrap pcard-media">${img(p.image, "", t(p.title))}</div>
+      ${media(p)}
       <div class="pcard-body">
         <p class="pcard-cat">${t(p.category)} · ${p.year}</p>
         <h3>${t(p.title)}</h3>
         <p class="pcard-desc">${t(p.desc)}</p>
+        ${points}
         <div class="tags">${tags}</div>
       </div>`;
+    const cls = "pcard reveal" + (media(p) ? "" : " no-media");
     return p.link
-      ? `<a class="pcard reveal" href="${p.link}" target="_blank" rel="noopener">${inner}<span class="pcard-arrow">↗</span></a>`
-      : `<article class="pcard reveal">${inner}</article>`;
+      ? `<a class="${cls}" href="${p.link}" target="_blank" rel="noopener">${inner}<span class="pcard-arrow">↗</span></a>`
+      : `<article class="${cls}">${inner}</article>`;
   }).join("");
   return `
   <section id="projects" class="section">
     <div class="wrap">${head("projects")}<div class="pgrid">${cards}</div></div>
+  </section>`;
+}
+
+function renderProducts() {
+  const P = CV.products;
+  const cats = P.categories.map(c => {
+    const cards = c.companies.flatMap(co => co.items.map(it => `
+      <figure class="prod reveal">
+        <div class="slides prod-shot">
+          <img class="slide on" src="${it.image}" alt="${t(it.name)}" loading="lazy" onerror="this.remove()">
+          <span class="badge hint">${t(UI.labels.enlarge)}</span>
+        </div>
+        <figcaption>
+          <h4>${t(it.name)}</h4>
+          <div class="prod-brand">
+            <img src="${co.logo}" alt="${co.name}" loading="lazy" onerror="this.remove()">
+            <span>${co.name}</span>
+          </div>
+        </figcaption>
+      </figure>`)).join("");
+    return `
+      <div class="prod-cat reveal">
+        <h3 class="prod-cat-name">${t(c.name)}</h3>
+        <div class="prod-grid">${cards}</div>
+      </div>`;
+  }).join("");
+  return `
+  <section id="products" class="section alt">
+    <div class="wrap">
+      ${head("products")}
+      <p class="products-intro reveal">${t(P.intro)}</p>
+      <div class="slides products-overview reveal">
+        <img class="slide on" src="${P.overview}" alt="Product implementations overview" loading="lazy" onerror="this.parentElement.remove()">
+        <span class="badge hint">${t(UI.labels.enlarge)}</span>
+      </div>
+      ${cats}
+    </div>
   </section>`;
 }
 
@@ -296,7 +356,7 @@ function render() {
   document.getElementById("header").innerHTML = renderHeader();
   document.getElementById("main").innerHTML =
     renderHero() + renderProfile() + renderExperience() + renderProjects() +
-    renderSkills() + renderEducation() + renderCerts() + renderContact();
+    renderProducts() + renderSkills() + renderEducation() + renderCerts() + renderContact();
   wire();
   observe();
 }
@@ -340,3 +400,78 @@ addEventListener("scroll", onScroll, { passive: true });
 onScroll();
 
 render();
+
+/* ---------- slideshow + lightbox (wired once) ---------- */
+const slidesOf = el => [...el.querySelectorAll(".slide")];
+
+function step(box, dir) {
+  const sl = slidesOf(box);
+  if (sl.length < 2) return;
+  const i = Math.max(0, sl.findIndex(x => x.classList.contains("on")));
+  const n = (i + dir + sl.length) % sl.length;
+  sl[i].classList.remove("on");
+  sl[n].classList.add("on");
+  const c = box.querySelector(".count b");
+  if (c) c.textContent = n + 1;
+}
+
+/* all cards advance together; reduced-motion users get an instant swap (CSS) */
+setInterval(() => {
+  if (document.hidden || lb.classList.contains("open")) return;
+  document.querySelectorAll(".pcard .slides").forEach(b => step(b, 1));
+}, 4200);
+
+/* lightbox element, built once */
+const lb = document.createElement("div");
+lb.id = "lb";
+lb.innerHTML = `
+  <button class="lb-close" aria-label="Close">✕</button>
+  <button class="lb-nav lb-prev" aria-label="Previous">‹</button>
+  <img class="lb-img" alt="">
+  <button class="lb-nav lb-next" aria-label="Next">›</button>
+  <div class="lb-bar"><span class="lb-cap"></span><span class="lb-count"></span></div>`;
+document.body.appendChild(lb);
+
+let lbSrcs = [], lbIndex = 0, lbCap = "";
+const lbImg = lb.querySelector(".lb-img");
+
+function lbShow(i) {
+  lbIndex = (i + lbSrcs.length) % lbSrcs.length;
+  lbImg.src = lbSrcs[lbIndex];
+  lb.querySelector(".lb-cap").textContent = lbCap;
+  lb.querySelector(".lb-count").textContent = lbSrcs.length > 1 ? `${lbIndex + 1} / ${lbSrcs.length}` : "";
+  lb.querySelectorAll(".lb-nav").forEach(b => b.hidden = lbSrcs.length < 2);
+}
+function lbOpen(srcs, i, cap) {
+  lbSrcs = srcs; lbCap = cap || "";
+  lb.classList.add("open");
+  document.body.style.overflow = "hidden";
+  lbShow(i);
+}
+function lbClose() {
+  lb.classList.remove("open");
+  document.body.style.overflow = "";
+  lbImg.removeAttribute("src");
+}
+
+document.addEventListener("click", e => {
+  const box = e.target.closest(".slides:not(.nolb)");
+  if (box) {
+    const sl = slidesOf(box);
+    if (!sl.length) return;
+    const card = box.closest(".pcard, .prod");
+    const cap = card ? (card.querySelector("h3, h4")?.textContent || "") : "";
+    lbOpen(sl.map(x => x.src), Math.max(0, sl.findIndex(x => x.classList.contains("on"))), cap);
+    return;
+  }
+  if (e.target.closest(".lb-prev")) return lbShow(lbIndex - 1);
+  if (e.target.closest(".lb-next")) return lbShow(lbIndex + 1);
+  if (e.target.closest(".lb-close") || e.target === lb) lbClose();
+});
+
+addEventListener("keydown", e => {
+  if (!lb.classList.contains("open")) return;
+  if (e.key === "Escape") lbClose();
+  if (e.key === "ArrowLeft") lbShow(lbIndex - 1);
+  if (e.key === "ArrowRight") lbShow(lbIndex + 1);
+});

@@ -184,81 +184,251 @@ const CV = {
     }
   ],
 
-  /* ---------- 7. PROJECTS ---------- */
+  /* ---------- 7. PROJECTS ----------
+     images: [] -> slideshow on the card, click opens the lightbox
+     points: [] -> card without images, rendered as a list
+     link / video -> card becomes clickable / shows a play badge */
   projects: [
     {
-      title: { en: "Manufacturing Traceability System", id: "Sistem Traceability Manufaktur" },
+      title: { en: "Manufacturing Traceability System — Giken One MES", id: "Manufacturing Traceability System — Giken One MES" },
       category: { en: "Award-winning · MES", id: "Peraih penghargaan · MES" },
-      year: "2023",
+      year: "2019 — Present",
       desc: {
-        en: "End-to-end traceability across production lines that eliminated defect passage between processes and won 1st place globally at the Giken Value Engineering Award.",
-        id: "Traceability menyeluruh antar lini produksi yang menghilangkan lolosnya defect antar proses dan meraih Juara 1 global pada Giken Value Engineering Award."
+        en: "The plant-wide MES: production dashboards per assembly line, full unit traceback, SMT material refill control and Pokayoke enforcement across 500+ product models. Won 1st place globally at the Giken Value Engineering Award 2023 for eliminating defect passage between processes.",
+        id: "MES untuk seluruh pabrik: dashboard produksi per lini perakitan, traceback unit menyeluruh, kontrol refill material SMT, dan penerapan Pokayoke pada 500+ model produk. Juara 1 global Giken Value Engineering Award 2023 karena menghilangkan lolosnya defect antar proses."
       },
-      tags: ["C#", "MySQL", "Pokayoke", "Traceability"],
-      image: "assets/img/projects/traceability.jpg",
-      link: ""
+      tags: ["C# / .NET", "MySQL", "Traceability", "Pokayoke", "Dashboard"],
+      images: [
+        "assets/img/projects/manufacturing-traceability-system-2019-until-now/01-1-giken-one-mes-apps.png",
+        "assets/img/projects/manufacturing-traceability-system-2019-until-now/02-1a-layout.png",
+        "assets/img/projects/manufacturing-traceability-system-2019-until-now/03-2-production-final-assembly-dashboard.png",
+        "assets/img/projects/manufacturing-traceability-system-2019-until-now/04-2a-traceback.png",
+        "assets/img/projects/manufacturing-traceability-system-2019-until-now/05-3-production-final-assembly-dashboard-details.png",
+        "assets/img/projects/manufacturing-traceability-system-2019-until-now/06-4-smt-material-refill-system.png",
+        "assets/img/projects/manufacturing-traceability-system-2019-until-now/07-5-investment-cost.png"
+      ]
     },
     {
       title: { en: "Intelligent Machine Data", id: "Intelligent Machine Data" },
       category: { en: "Award-winning · Industry 4.0", id: "Peraih penghargaan · Industri 4.0" },
       year: "2025",
       desc: {
-        en: "Real-time machine analytics platform optimising line efficiency and downtime visibility; 1st place globally at the Giken Value Engineering Award 2025.",
-        id: "Platform analitik mesin real-time yang mengoptimalkan efisiensi lini dan visibilitas downtime; Juara 1 global Giken Value Engineering Award 2025."
+        en: "Real-time machine data acquisition and analytics that replaced manual reporting with live line-efficiency and downtime visibility. 1st place globally at the Giken Value Engineering Award 2025.",
+        id: "Akuisisi dan analitik data mesin real-time yang menggantikan pelaporan manual dengan visibilitas efisiensi lini dan downtime secara langsung. Juara 1 global Giken Value Engineering Award 2025."
       },
-      tags: ["IIoT", "Data Acquisition", "Analytics", "C#"],
-      image: "assets/img/projects/machine-data.jpg",
-      link: ""
+      tags: ["IIoT", "Data Acquisition", "Analytics", "C#", "MySQL"],
+      images: [
+        "assets/img/projects/intelligent-machine-data-2025/01-1-title.png",
+        "assets/img/projects/intelligent-machine-data-2025/02-2-focus-point.png",
+        "assets/img/projects/intelligent-machine-data-2025/03-3-target-point.png",
+        "assets/img/projects/intelligent-machine-data-2025/04-4-brainstorming.png",
+        "assets/img/projects/intelligent-machine-data-2025/05-5-schedule.png",
+        "assets/img/projects/intelligent-machine-data-2025/06-6-working-concepts-before-improvement.png",
+        "assets/img/projects/intelligent-machine-data-2025/07-7-working-concepts-afterimprovement.png",
+        "assets/img/projects/intelligent-machine-data-2025/08-8-stage-1.png",
+        "assets/img/projects/intelligent-machine-data-2025/09-9-stage-2.png",
+        "assets/img/projects/intelligent-machine-data-2025/10-10-result.png",
+        "assets/img/projects/intelligent-machine-data-2025/11-11-summary.png"
+      ]
+    },
+    {
+      title: { en: "Digital Feeder Inventory & Tracking", id: "Inventori & Pelacakan Feeder Digital" },
+      category: { en: "Giken One Apps · Asset Control", id: "Giken One Apps · Kontrol Aset" },
+      year: "2026",
+      desc: {
+        en: "Real-time feeder location and asset control built on Giken One: it connects the pick-up material database and the refill system to track every feeder down to area → line → machine → table → feeder number, with an analytics dashboard, feeder location map and search. A process that had no inventory system at all became real-time with near-zero manpower.",
+        id: "Kontrol aset dan lokasi feeder secara real-time di atas Giken One: menghubungkan database pick-up material dan sistem refill untuk melacak setiap feeder hingga area → line → mesin → table → nomor feeder, lengkap dengan dashboard analitik, peta lokasi feeder, dan pencarian. Proses yang sebelumnya tanpa sistem inventori menjadi real-time dengan manpower mendekati nol."
+      },
+      tags: ["Giken One", "Asset Tracking", "Dashboard", "MySQL", "Security"],
+      images: [
+        "assets/img/projects/digitalization-and-security-feeder-calibrations-data-2026/01-1.png",
+        "assets/img/projects/digitalization-and-security-feeder-calibrations-data-2026/02-2.png",
+        "assets/img/projects/digitalization-and-security-feeder-calibrations-data-2026/03-3.png"
+      ]
+    },
+    {
+      title: { en: "Auto Feeder Machine Data Generator", id: "Auto Feeder Machine Data Generator" },
+      category: { en: "Process Digitalisation", id: "Digitalisasi Proses" },
+      year: "2026",
+      desc: {
+        en: "Digitalised the SMT feeder data flow across four roles — technician, QA, technician supervisor and production supervisor. Manual preparation and verification of 5–7 hours with 4–6 people became a 30-minute automated flow: cycle time down by roughly 93%, with secure and transparent data.",
+        id: "Mendigitalkan alur data feeder SMT lintas empat peran — teknisi, QA, supervisor teknisi, dan supervisor produksi. Persiapan serta verifikasi manual 5–7 jam dengan 4–6 orang menjadi alur otomatis 30 menit: cycle time turun sekitar 93%, dengan data yang aman dan transparan."
+      },
+      tags: ["Automation", "SMT", "Workflow", "Giken One"],
+      images: [
+        "assets/img/projects/auto-feeder-machine-generator-2026/01-1-comparison.png",
+        "assets/img/projects/auto-feeder-machine-generator-2026/02-2-smt-feeder-data-auto-generate-new.png",
+        "assets/img/projects/auto-feeder-machine-generator-2026/03-3-smt-feeder-data-auto-generate-2.png"
+      ]
+    },
+    {
+      title: { en: "SMT Pick-Up Material Analytics Dashboard", id: "Dashboard Analitik Pick-Up Material SMT" },
+      category: { en: "Data Engineering · Quality", id: "Data Engineering · Kualitas" },
+      year: "2026",
+      desc: {
+        en: "Automated collection and analysis of component pick-up data across 23 SMT lines — 7.9 million pickups processed, error rate and spoilage PPM per line and per machine, high-risk feeder detection, top error feeders, countermeasure tracking and one-click export to Excel, PDF or email.",
+        id: "Pengumpulan dan analisis otomatis data pick-up komponen di 23 lini SMT — 7,9 juta pickup diproses, error rate dan spoilage PPM per lini maupun per mesin, deteksi feeder berisiko tinggi, daftar feeder error tertinggi, pelacakan countermeasure, serta ekspor sekali klik ke Excel, PDF, atau email."
+      },
+      tags: ["Analytics", "SMT", "Dashboard", "MySQL", "Reporting"],
+      images: [
+        "assets/img/projects/automations-collect-and-analysis-dashboard-smt-pickup-material-2026/01-1.png",
+        "assets/img/projects/automations-collect-and-analysis-dashboard-smt-pickup-material-2026/02-2.png"
+      ]
+    },
+    {
+      title: { en: "Digital Wristband ESD Auto Checker", id: "Digital Wristband ESD Auto Checker" },
+      category: { en: "Industrial IoT · Safety", id: "Industrial IoT · Keselamatan" },
+      year: "2020",
+      desc: {
+        en: "Automated ESD wristband checking gate built with Arduino, C# and MySQL. Every operator is verified before entering the line, giving 100% compliance and a record of wristband hardware defect rates.",
+        id: "Gate pemeriksaan wristband ESD otomatis berbasis Arduino, C#, dan MySQL. Setiap operator diverifikasi sebelum masuk lini, menghasilkan kepatuhan 100% dan catatan tingkat kerusakan perangkat wristband."
+      },
+      tags: ["Arduino", "C#", "MySQL", "IIoT", "ESD"],
+      images: [
+        "assets/img/projects/digital-wristband-esd-auto-checker-2020/01-1.png",
+        "assets/img/projects/digital-wristband-esd-auto-checker-2020/02-2.png",
+        "assets/img/projects/digital-wristband-esd-auto-checker-2020/03-3.png"
+      ]
+    },
+    {
+      title: { en: "Centralisation Data Management", id: "Sentralisasi Manajemen Data" },
+      category: { en: "IT Infrastructure", id: "Infrastruktur IT" },
+      year: "2020",
+      desc: {
+        en: "Moved the plant from manual books and data scattered across individual computers to centralised digital storage on servers and network shares — removing the risk of losing data to a single computer failure, cutting paper cost and making documents searchable across departments.",
+        id: "Memindahkan pabrik dari buku manual dan data yang tersebar di komputer masing-masing menuju penyimpanan digital terpusat di server dan jaringan — menghilangkan risiko kehilangan data akibat kerusakan satu komputer, memangkas biaya kertas, dan membuat dokumen mudah dicari lintas departemen."
+      },
+      tags: ["Server", "Network", "Data Management", "Security"],
+      images: [
+        "assets/img/projects/centralization-data-management-2020/01-1-concepts.png",
+        "assets/img/projects/centralization-data-management-2020/02-2-concepts.png"
+      ]
+    },
+    {
+      title: { en: "Multiple Remote Desktop Protocol (MRDP)", id: "Multiple Remote Desktop Protocol (MRDP)" },
+      category: { en: "IT Infrastructure", id: "Infrastruktur IT" },
+      year: "2021",
+      desc: {
+        en: "Remote access architecture letting one Windows host be reached from every operating system in the plant — Windows, Linux, Raspberry Pi, Android and iOS — so machines and servers can be supported without walking the floor.",
+        id: "Arsitektur akses jarak jauh yang memungkinkan satu host Windows diakses dari seluruh sistem operasi di pabrik — Windows, Linux, Raspberry Pi, Android, dan iOS — sehingga mesin dan server dapat ditangani tanpa harus berkeliling lantai produksi."
+      },
+      tags: ["RDP", "Linux", "Raspberry Pi", "Network"],
+      images: [
+        "assets/img/projects/multiple-remote-desktop-protocol-mrdp-2021/01-1-intro.png",
+        "assets/img/projects/multiple-remote-desktop-protocol-mrdp-2021/02-2-concepts.png",
+        "assets/img/projects/multiple-remote-desktop-protocol-mrdp-2021/03-3-roadmap.png",
+        "assets/img/projects/multiple-remote-desktop-protocol-mrdp-2021/04-4-trial.png"
+      ]
     },
     {
       title: { en: "AI-Driven Grid Trading Application", id: "Aplikasi Grid Trading Berbasis AI" },
       category: { en: "Personal · AI & Fintech", id: "Personal · AI & Fintech" },
-      year: "2024",
+      year: "2026",
       desc: {
         en: "High-frequency grid trading bot built with React.js and the Telegram Bot API, using zero-reasoning AI models for ultra-low-latency execution on market sentiment, technical indicators and Binance API data.",
         id: "Bot grid trading frekuensi tinggi berbasis React.js dan Telegram Bot API, memakai model AI zero-reasoning untuk eksekusi berlatensi sangat rendah berdasarkan sentimen pasar, indikator teknikal, dan data Binance API."
       },
       tags: ["React.js", "Telegram Bot API", "Binance API", "AI"],
-      image: "assets/img/projects/grid-trading.jpg",
-      link: ""
+      images: [
+        "assets/img/projects/ai-driven-grid-trading-2026/01-robot-trading-dashboard.jpg",
+        "assets/img/projects/ai-driven-grid-trading-2026/02-robot-trading-feature.jpg",
+        "assets/img/projects/ai-driven-grid-trading-2026/03-robot-trading-presentations.jpg"
+      ]
     },
     {
       title: { en: "LabVIEW AOI PCB Inspection System", id: "Sistem Inspeksi PCB AOI LabVIEW" },
-      category: { en: "Machine Vision", id: "Machine Vision" },
+      category: { en: "Machine Vision · Video", id: "Machine Vision · Video" },
       year: "2021",
       desc: {
-        en: "Automated Optical Inspection algorithm in LabVIEW Vision detecting missing or misaligned components on PCB assembly lines, cutting manual QA headcount and standard production time.",
-        id: "Algoritma Automated Optical Inspection di LabVIEW Vision untuk mendeteksi komponen hilang atau tidak sejajar pada lini perakitan PCB, memangkas kebutuhan QA manual dan waktu produksi standar."
+        en: "Automated Optical Inspection algorithm in LabVIEW Vision detecting missing or misaligned components on PCB assembly lines, cutting manual QA headcount and standard production time. Watch the system running on YouTube.",
+        id: "Algoritma Automated Optical Inspection di LabVIEW Vision untuk mendeteksi komponen hilang atau tidak sejajar pada lini perakitan PCB, memangkas kebutuhan QA manual dan waktu produksi standar. Lihat sistemnya berjalan di YouTube."
       },
       tags: ["LabVIEW", "Vision", "AOI", "Quality"],
-      image: "assets/img/projects/aoi.jpg",
-      link: ""
+      video: true,
+      image: "https://img.youtube.com/vi/AfsoS-FMV7E/maxresdefault.jpg",
+      link: "https://youtu.be/AfsoS-FMV7E"
     },
     {
       title: { en: "IoT Emergency Response & Human Finder Robot", id: "Robot Tanggap Darurat & Pencari Korban IoT" },
       category: { en: "Robotics · IoT", id: "Robotika · IoT" },
       year: "2021",
       desc: {
-        en: "Raspberry Pi / Arduino wireless rescue robot with thermal, gas, smoke and PIR sensors plus live camera streaming, controlled from web and mobile apps for hazardous-environment search.",
-        id: "Robot penyelamat nirkabel berbasis Raspberry Pi / Arduino dengan sensor termal, gas, asap, dan PIR serta streaming kamera langsung, dikendalikan dari aplikasi web dan mobile untuk pencarian di lingkungan berbahaya."
+        en: "Wireless rescue robot for hazardous-environment search, controlled from web and mobile apps.",
+        id: "Robot penyelamat nirkabel untuk pencarian di lingkungan berbahaya, dikendalikan dari aplikasi web dan mobile."
       },
-      tags: ["Raspberry Pi", "Arduino", "Sensors", "Streaming"],
-      image: "assets/img/projects/rescue-robot.jpg",
-      link: ""
+      points: [
+        { en: "Raspberry Pi and Arduino control with wireless teleoperation", id: "Kontrol Raspberry Pi dan Arduino dengan teleoperasi nirkabel" },
+        { en: "Thermal, gas, smoke and PIR sensors for detecting survivors", id: "Sensor termal, gas, asap, dan PIR untuk mendeteksi korban" },
+        { en: "Live camera streaming to web and mobile clients", id: "Streaming kamera langsung ke klien web dan mobile" },
+        { en: "Built for search in environments unsafe for rescue teams", id: "Dirancang untuk pencarian di lingkungan yang tidak aman bagi tim penyelamat" }
+      ],
+      tags: ["Raspberry Pi", "Arduino", "Sensors", "Streaming"]
     },
     {
       title: { en: "Smart Multi-Biometric Access Controller", id: "Pengendali Akses Multi-Biometrik" },
       category: { en: "Computer Vision · Security", id: "Computer Vision · Keamanan" },
       year: "2020",
       desc: {
-        en: "Automated door-lock ecosystem combining Python (OpenCV) facial recognition, fingerprint validation, RFID and PIN passcodes, all backed by MySQL access logging.",
-        id: "Ekosistem kunci pintu otomatis yang memadukan pengenalan wajah Python (OpenCV), validasi sidik jari, RFID, dan PIN, dengan pencatatan akses berbasis MySQL."
+        en: "Automated door-lock ecosystem with four independent identification methods and full access logging.",
+        id: "Ekosistem kunci pintu otomatis dengan empat metode identifikasi independen dan pencatatan akses lengkap."
       },
-      tags: ["Python", "OpenCV", "RFID", "MySQL"],
-      image: "assets/img/projects/biometric.jpg",
-      link: ""
+      points: [
+        { en: "Facial recognition built in Python with OpenCV", id: "Pengenalan wajah dibangun dengan Python dan OpenCV" },
+        { en: "Fingerprint validation and RFID card reading", id: "Validasi sidik jari dan pembacaan kartu RFID" },
+        { en: "PIN passcode fallback for every user", id: "Cadangan PIN untuk setiap pengguna" },
+        { en: "MySQL logging of every access attempt", id: "Pencatatan setiap percobaan akses di MySQL" }
+      ],
+      tags: ["Python", "OpenCV", "RFID", "MySQL"]
     }
   ],
+
+  /* ---------- 7b. PRODUCT IMPLEMENTATIONS ---------- */
+  products: {
+    intro: {
+      en: "Products whose production lines I handled at Giken Precision Indonesia — building the traceability system and digitalising the process behind each one, from high-end electronics to medical devices.",
+      id: "Produk yang lini produksinya saya tangani di Giken Precision Indonesia — membangun sistem traceability dan mendigitalkan prosesnya, mulai dari elektronik high-end hingga perangkat medis."
+    },
+    overview: "assets/img/products/overview.png",
+    categories: [
+      {
+        name: { en: "High-End Products", id: "Produk High-End" },
+        companies: [
+          { name: "PreAct Technologies", logo: "assets/img/products/pre-act/logo.png",
+            items: [{ name: { en: "LiDAR Camera", id: "Kamera LiDAR" }, image: "assets/img/products/pre-act/1-lidar-camera-product.jpg" }] },
+          { name: "AOHAI", logo: "assets/img/products/aohai/logo.png",
+            items: [{ name: { en: "Crypto Miner Machine", id: "Mesin Crypto Miner" }, image: "assets/img/products/aohai/1-crypto-miner-machine-product.jpg" }] },
+          { name: "Bluetti", logo: "assets/img/products/bluetti/logo.png",
+            items: [{ name: { en: "Portable Power Station", id: "Portable Power Station" }, image: "assets/img/products/bluetti/portable-power-station.png" }] }
+        ]
+      },
+      {
+        name: { en: "Medical Products", id: "Produk Medis" },
+        companies: [
+          { name: "Porticos Asia", logo: "assets/img/products/porticos/logo.png",
+            items: [{ name: { en: "Cardiac Monitor", id: "Monitor Jantung" }, image: "assets/img/products/porticos/cardiac-monitor-product.png" }] },
+          { name: "Philips", logo: "assets/img/products/philips/logo.jpg",
+            items: [{ name: { en: "Electric Toothbrush", id: "Sikat Gigi Elektrik" }, image: "assets/img/products/philips/electric-toothbrush-product.jpg" }] }
+        ]
+      },
+      {
+        name: { en: "Industrial Products", id: "Produk Industri" },
+        companies: [
+          { name: "Toshiba", logo: "assets/img/products/toshiba/logo.jpg",
+            items: [{ name: { en: "Thermal Printer", id: "Thermal Printer" }, image: "assets/img/products/toshiba/thermal-printer.jpg" }] }
+        ]
+      },
+      {
+        name: { en: "IoT Devices", id: "Perangkat IoT" },
+        companies: [
+          { name: "STYL Solutions", logo: "assets/img/products/styl-solutions/logo.png",
+            items: [
+              { name: { en: "NFC Reader", id: "NFC Reader" }, image: "assets/img/products/styl-solutions/nfc-reader.png" },
+              { name: { en: "Tree Tilt Sensor", id: "Sensor Kemiringan Pohon" }, image: "assets/img/products/styl-solutions/tree-tilt-sensor.png" }
+            ] }
+        ]
+      }
+    ]
+  },
 
   /* ---------- 8. SKILLS ---------- */
   skills: [
