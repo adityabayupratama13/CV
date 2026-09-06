@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{width:1200px;height:630px;overflow:hidden;font-family:"Inter",system-ui,sans-serif;color:#fff}
+  .card{
+    position:relative;width:1200px;height:630px;overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 82% 10%,#0E4C87 0%,rgba(14,76,135,0) 55%),
+      linear-gradient(160deg,#04121F 0%,#062B47 48%,#041C2C 100%);
+  }
+  .grid{
+    position:absolute;inset:0;opacity:.22;
+    background-image:linear-gradient(rgba(255,255,255,.14) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(255,255,255,.14) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(80% 70% at 62% 30%,#000 0%,transparent 78%);
+  }
+  .glow{
+    position:absolute;right:-140px;top:-190px;width:760px;height:760px;border-radius:50%;
+    background:radial-gradient(circle,rgba(52,130,246,.45) 0%,rgba(52,130,246,0) 62%);filter:blur(6px);
+  }
+  .photo{
+    position:absolute;right:0;top:0;width:500px;height:630px;
+    background:url("assets/img/profile/aditya.jpg") center 16% / cover no-repeat;
+    filter:grayscale(.35) contrast(1.05) brightness(.92);
+    -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.55) 26%,#000 62%);
+  }
+  .photo::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,rgba(4,28,44,.95) 0%,rgba(4,28,44,.45) 45%,rgba(6,43,71,.20) 100%),
+               linear-gradient(0deg,rgba(4,18,31,.55) 0%,rgba(4,18,31,0) 55%);
+  }
+  .inner{position:absolute;inset:0;padding:62px 70px;display:flex;flex-direction:column;justify-content:space-between}
+  .top{display:flex;align-items:center;gap:16px}
+  .mark{width:52px;height:52px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.75);
+        font-size:17px;font-weight:600;letter-spacing:.08em}
+  .kicker{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:#7FA3FF;font-weight:600}
+  h1{font-family:"Newsreader",Georgia,serif;font-weight:400;font-size:74px;line-height:1.03;letter-spacing:-.02em;max-width:16ch}
+  .role{margin-top:20px;font-size:23px;letter-spacing:.01em;color:rgba(255,255,255,.94);font-weight:500}
+  .sub{margin-top:10px;font-size:17px;color:rgba(255,255,255,.62);max-width:38ch;line-height:1.5}
+  .stats{display:flex;gap:0;border-top:1px solid rgba(255,255,255,.18);padding-top:22px;max-width:700px}
+  .stat{padding-right:40px;margin-right:40px;border-right:1px solid rgba(255,255,255,.14)}
+  .stat:last-child{border-right:0;margin-right:0;padding-right:0}
+  .stat b{display:block;font-family:"Newsreader",Georgia,serif;font-weight:400;font-size:34px;line-height:1}
+  .stat span{display:block;margin-top:7px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.58)}
+  .url{margin-top:26px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="grid"></div>
+  <div class="glow"></div>
+  <div class="photo"></div>
+  <div class="inner">
+    <div>
+      <div class="top">
+        <span class="mark">AB</span>
+        <span class="kicker">Software &amp; IT Engineering Leadership</span>
+      </div>
+      <h1 style="margin-top:38px">Aditya Bayu<br>Pratama</h1>
+      <p class="role">Supervisor MES &amp; IT Engineer</p>
+      <p class="sub">Manufacturing Execution Systems · Industrial IoT · Machine Vision · Smart Factory Automation</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>7+</b><span>Years</span></div>
+      <div class="stat"><b>500+</b><span>Product models</span></div>
+      <div class="stat"><b>5</b><span>Engineers led</span></div>
+      <div class="stat"><b>2×</b><span>Global 1st place</span></div>
+    </div>
+    <div class="url">adityabayupratama13.github.io/CV</div>
+  </div>
+</div>
+</body>
+</html>

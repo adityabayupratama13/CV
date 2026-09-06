@@ -47,6 +47,18 @@ Open each card once and fix any URL that does not resolve. BNSP / LPJK / Toyota
 certificates have no public link, so their `url` is empty — upload a scan to
 `assets/docs/` and point `url` at it if you want them clickable.
 
+## Share preview (WhatsApp, LinkedIn, X)
+
+`assets/img/og-cover.jpg` is the link-preview card. To regenerate it after a
+title or metric change, edit `_og.html`, serve the folder, then run:
+
+```bash
+chrome --headless=new --window-size=1200,630 --screenshot=assets/img/og-cover.png http://127.0.0.1:8765/_og.html
+```
+
+Keep it under ~300 KB (JPEG) or WhatsApp skips the thumbnail. WhatsApp caches
+previews per URL for days — append `?v=2` to the link to force a fresh scrape.
+
 ## Deploy (Netlify)
 
 Drag this whole folder onto https://app.netlify.com/drop, or connect a Git repo.
