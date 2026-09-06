@@ -214,7 +214,7 @@ p{margin:0 0 1em}
 .gallery figure:hover img{transform:scale(1.04)}
 
 /* ============ projects ============ */
-.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:28px;align-items:start}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:28px;align-items:stretch}
 .pcard{
   position:relative;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;
   transition:transform .35s ease,box-shadow .35s ease,border-color .35s;
@@ -328,7 +328,7 @@ p{margin:0 0 1em}
 .slides.nolb{cursor:pointer}
 .slide{
   position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
-  opacity:0;transition:opacity .9s ease;
+  opacity:0;transition:opacity .5s ease;will-change:opacity;
 }
 .slide.on{opacity:1}
 .badge{
@@ -653,4 +653,20 @@ p{margin:0 0 1em}
   .metric-lab{min-height:0}
   .contact-list dd{word-break:break-word}
   .contact-alt a{display:block;margin:8px 0 0;width:max-content}
+}
+
+/* ============ projects: one rhythm across every card ============ */
+.pcard h3{
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  min-height:2.7em;
+}
+.pcard-desc{
+  display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden;
+  min-height:calc(5 * 1.65em);
+}
+.pcard .plist{margin-top:14px}
+.pcard .flow{margin-top:16px}
+@media (max-width:640px){
+  .pcard h3{min-height:0}
+  .pcard-desc{-webkit-line-clamp:unset;min-height:0}
 }

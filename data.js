@@ -230,8 +230,8 @@ const CV = {
       category: { en: "Award-winning · MES", id: "Peraih penghargaan · MES" },
       year: "2019 — Present",
       desc: {
-        en: "The plant-wide MES: production dashboards per assembly line, full unit traceback, SMT refill control and Pokayoke enforcement across 500+ product models. 1st place globally at the Giken Value Engineering Award 2023.",
-        id: "MES untuk seluruh pabrik: dashboard produksi per lini perakitan, traceback unit menyeluruh, kontrol refill SMT, dan penerapan Pokayoke pada 500+ model produk. Juara 1 global Giken Value Engineering Award 2023."
+        en: "Plant-wide MES: production dashboards per assembly line, full unit traceback, SMT refill control and Pokayoke enforcement across 500+ product models. 1st place globally, Giken VE Award 2023.",
+        id: "MES seluruh pabrik: dashboard produksi per lini, traceback unit menyeluruh, kontrol refill SMT, dan Pokayoke pada 500+ model produk. Juara 1 global Giken VE Award 2023."
       },
       tags: ["C# / .NET", "MySQL", "Traceability", "Pokayoke", "Dashboard"],
       images: [
@@ -272,8 +272,8 @@ const CV = {
       category: { en: "Giken One Apps · Asset Control", id: "Giken One Apps · Kontrol Aset" },
       year: "2026",
       desc: {
-        en: "Real-time feeder location and asset control on Giken One: it links the pick-up material database to the refill system and tracks every feeder down to area → line → machine → table → feeder number. A process with no inventory system at all became real-time, with near-zero manpower.",
-        id: "Kontrol aset dan lokasi feeder real-time di atas Giken One: menghubungkan database pick-up material dengan sistem refill dan melacak setiap feeder hingga area → line → mesin → table → nomor feeder. Proses yang sebelumnya tanpa sistem inventori kini real-time dengan manpower mendekati nol."
+        en: "Real-time feeder location and asset control on Giken One: it links the pick-up material database to the refill system and tracks every feeder down to area → line → machine → table → feeder number.",
+        id: "Kontrol aset dan lokasi feeder real-time di atas Giken One: menghubungkan database pick-up material dengan sistem refill dan melacak setiap feeder hingga area → line → mesin → table → nomor feeder."
       },
       tags: ["Giken One", "Asset Tracking", "Dashboard", "MySQL", "Security"],
       images: [
@@ -302,8 +302,8 @@ const CV = {
       category: { en: "Data Engineering · Quality", id: "Data Engineering · Kualitas" },
       year: "2026",
       desc: {
-        en: "Automated collection and analysis of component pick-up data across 23 SMT lines: 7.9 million pickups, error rate and spoilage PPM per line and machine, high-risk feeder detection and one-click export to Excel, PDF or email.",
-        id: "Pengumpulan dan analisis otomatis data pick-up komponen di 23 lini SMT: 7,9 juta pickup, error rate dan spoilage PPM per lini maupun mesin, deteksi feeder berisiko tinggi, serta ekspor sekali klik ke Excel, PDF, atau email."
+        en: "Automated collection and analysis of component pick-up data across 23 SMT lines: 7.9 million pickups, error rate and spoilage PPM per line and machine, plus high-risk feeder detection.",
+        id: "Pengumpulan dan analisis otomatis data pick-up komponen di 23 lini SMT: 7,9 juta pickup, error rate dan spoilage PPM per lini maupun mesin, serta deteksi feeder berisiko tinggi."
       },
       tags: ["Analytics", "SMT", "Dashboard", "MySQL", "Reporting"],
       images: [
@@ -316,7 +316,7 @@ const CV = {
       category: { en: "Industrial IoT · Safety", id: "Industrial IoT · Keselamatan" },
       year: "2020",
       desc: {
-        en: "Automated ESD wristband checking gate built with Arduino, C# and MySQL. Every operator is verified before entering the line, giving 100% compliance and a record of wristband hardware defect rates.",
+        en: "Automated ESD wristband checking gate built with Arduino, C# and MySQL. Every operator is verified before entering the line, giving 100% compliance and a record of defect rates.",
         id: "Gate pemeriksaan wristband ESD otomatis berbasis Arduino, C#, dan MySQL. Setiap operator diverifikasi sebelum masuk lini, menghasilkan kepatuhan 100% dan catatan tingkat kerusakan perangkat wristband."
       },
       tags: ["Arduino", "C#", "MySQL", "IIoT", "ESD"],
@@ -331,8 +331,8 @@ const CV = {
       category: { en: "IT Infrastructure", id: "Infrastruktur IT" },
       year: "2020",
       desc: {
-        en: "Moved the plant from manual books and data scattered on individual computers to centralised storage on servers and network shares — no more data lost to a single failed drive, less paper, and documents searchable across departments.",
-        id: "Memindahkan pabrik dari buku manual dan data yang tersebar di tiap komputer menuju penyimpanan terpusat di server dan jaringan — data tidak lagi hilang karena satu hard disk rusak, biaya kertas turun, dan dokumen mudah dicari lintas departemen."
+        en: "Moved the plant from manual books and data scattered on individual computers to centralised storage on servers and network shares — no more data lost to a single failed drive.",
+        id: "Memindahkan pabrik dari buku manual dan data yang tersebar di tiap komputer menuju penyimpanan terpusat di server dan jaringan — data tidak lagi hilang karena satu hard disk rusak."
       },
       tags: ["Server", "Network", "Data Management", "Security"],
       images: [
@@ -345,8 +345,8 @@ const CV = {
       category: { en: "IT Infrastructure", id: "Infrastruktur IT" },
       year: "2021",
       desc: {
-        en: "Remote access architecture letting one Windows host be reached from every operating system in the plant — Windows, Linux, Raspberry Pi, Android and iOS — so machines and servers can be supported without walking the floor.",
-        id: "Arsitektur akses jarak jauh yang memungkinkan satu host Windows diakses dari seluruh sistem operasi di pabrik — Windows, Linux, Raspberry Pi, Android, dan iOS — sehingga mesin dan server dapat ditangani tanpa harus berkeliling lantai produksi."
+        en: "Remote access architecture letting one Windows host be reached from every operating system in the plant: Windows, Linux, Raspberry Pi, Android and iOS.",
+        id: "Arsitektur akses jarak jauh yang memungkinkan satu host Windows diakses dari seluruh sistem operasi di pabrik: Windows, Linux, Raspberry Pi, Android, dan iOS."
       },
       tags: ["RDP", "Linux", "Raspberry Pi", "Network"],
       images: [
@@ -361,8 +361,8 @@ const CV = {
       category: { en: "Personal · AI & Fintech", id: "Personal · AI & Fintech" },
       year: "2026",
       desc: {
-        en: "High-frequency grid trading bot built with React.js and the Telegram Bot API, using zero-reasoning AI models for ultra-low-latency execution on market sentiment, technical indicators and Binance API data.",
-        id: "Bot grid trading frekuensi tinggi berbasis React.js dan Telegram Bot API, memakai model AI zero-reasoning untuk eksekusi berlatensi sangat rendah berdasarkan sentimen pasar, indikator teknikal, dan data Binance API."
+        en: "High-frequency grid trading bot built with React.js and the Telegram Bot API, using zero-reasoning AI models for ultra-low-latency execution on market sentiment and Binance API data.",
+        id: "Bot grid trading frekuensi tinggi berbasis React.js dan Telegram Bot API, memakai model AI zero-reasoning untuk eksekusi berlatensi sangat rendah berdasarkan sentimen pasar dan data Binance API."
       },
       tags: ["React.js", "Telegram Bot API", "Binance API", "AI"],
       images: [
@@ -376,8 +376,8 @@ const CV = {
       category: { en: "Machine Vision · Video", id: "Machine Vision · Video" },
       year: "2021",
       desc: {
-        en: "Automated Optical Inspection algorithm in LabVIEW Vision detecting missing or misaligned components on PCB assembly lines, cutting manual QA headcount and standard production time. Watch the system running on YouTube.",
-        id: "Algoritma Automated Optical Inspection di LabVIEW Vision untuk mendeteksi komponen hilang atau tidak sejajar pada lini perakitan PCB, memangkas kebutuhan QA manual dan waktu produksi standar. Lihat sistemnya berjalan di YouTube."
+        en: "Automated Optical Inspection algorithm in LabVIEW Vision detecting missing or misaligned components on PCB assembly lines, cutting manual QA headcount and standard production time.",
+        id: "Algoritma Automated Optical Inspection di LabVIEW Vision untuk mendeteksi komponen hilang atau tidak sejajar pada lini perakitan PCB, memangkas kebutuhan QA manual dan waktu produksi standar."
       },
       tags: ["LabVIEW", "Vision", "AOI", "Quality"],
       video: true,
