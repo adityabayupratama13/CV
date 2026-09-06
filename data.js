@@ -114,7 +114,7 @@ const CV = {
          Edit a `period` here whenever a title or date changes. */
       roles: [
         {
-          title: { en: "Supervisor MES & IT", id: "Supervisor MES & IT" },
+          title: { en: "Supervisor MES & IT Engineer", id: "Supervisor MES & IT Engineer" },
           period: { en: "Jul 2026 — Present", id: "Jul 2026 — Sekarang" },
           note: {
             en: "Promoted to lead the MES and IT function: department strategy, system architecture, budget and the engineering team.",
@@ -132,7 +132,7 @@ const CV = {
         },
         {
           title: { en: "Software Test Engineer", id: "Software Test Engineer" },
-          period: { en: "Apr 2019 — Present", id: "Apr 2019 — Sekarang" },
+          period: { en: "Apr 2019 — Apr 2024", id: "Apr 2019 — Apr 2024" },
           note: {
             en: "Machine testing software for new products, trial runs and translating customer requirements into test criteria.",
             id: "Software pengujian mesin untuk produk baru, uji coba produksi, serta menerjemahkan kebutuhan pelanggan menjadi kriteria pengujian."
@@ -560,6 +560,7 @@ const CV = {
     {
       school: "State Polytechnic of Batam",
       logo: "assets/img/experience/polibatam.png",
+      schoolUrl: "https://www.linkedin.com/school/politeknik-negeri-batam/",
       degree: { en: "Bachelor of Applied Science (S.Tr.T.) — Mechatronics, Robotics & Automation Engineering",
                 id: "Sarjana Terapan (S.Tr.T.) — Teknik Mekatronika, Robotika & Otomasi" },
       period: { en: "Jul 2017 — Jul 2021", id: "Jul 2017 — Jul 2021" },

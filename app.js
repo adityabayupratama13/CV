@@ -331,7 +331,12 @@ function renderEducation() {
     return `
     <article class="edu reveal">
       <header class="edu-head">
-        <h3>${e.school}</h3>
+        <div class="edu-title">
+          ${e.logo ? `<a class="exp-logo edu-logo" href="${e.schoolUrl || "#"}" target="_blank" rel="noopener" title="${e.school} — LinkedIn">
+              <img src="${e.logo}" alt="${e.school}" loading="lazy" onerror="this.parentElement.remove()">
+            </a>` : ""}
+          <h3>${e.school}</h3>
+        </div>
         <span class="edu-period">${t(e.period)}</span>
       </header>
       <dl class="edu-rows">
