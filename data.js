@@ -268,6 +268,25 @@ const CV = {
       ]
     },
     {
+      title: { en: "PCBA Management Apps", id: "PCBA Management Apps" },
+      category: { en: "Department Platform · Web App", id: "Platform Departemen · Aplikasi Web" },
+      year: "2026",
+      desc: {
+        en: "The operating system of the PCBA IT department: help-desk tickets, tasks, schedules, projects, attendance, assets, a knowledge base and an audit log in one web app, on a live team dashboard.",
+        id: "Sistem operasional departemen IT PCBA: tiket help-desk, task, jadwal, proyek, absensi, aset, knowledge base, dan audit log dalam satu aplikasi web, di atas dashboard tim real-time."
+      },
+      tags: ["Web App", "Help Desk", "Task Management", "Knowledge Base", "Dashboard", "MySQL"],
+      images: [
+        "assets/img/projects/pcba-management-apps/02-2-dashboard.png",
+        "assets/img/projects/pcba-management-apps/03-3-help-desk-ticket.png",
+        "assets/img/projects/pcba-management-apps/04-4-task.png",
+        "assets/img/projects/pcba-management-apps/05-5-schedule.png",
+        "assets/img/projects/pcba-management-apps/06-6-projects.png",
+        "assets/img/projects/pcba-management-apps/07-7-knowlegde.png",
+        "assets/img/projects/pcba-management-apps/01-1-login.png"
+      ]
+    },
+    {
       title: { en: "Digital Feeder Inventory & Tracking", id: "Inventori & Pelacakan Feeder Digital" },
       category: { en: "Giken One Apps · Asset Control", id: "Giken One Apps · Kontrol Aset" },
       year: "2026",
