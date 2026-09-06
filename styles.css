@@ -214,7 +214,7 @@ p{margin:0 0 1em}
 .gallery figure:hover img{transform:scale(1.04)}
 
 /* ============ projects ============ */
-.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:28px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:28px;align-items:start}
 .pcard{
   position:relative;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;
   transition:transform .35s ease,box-shadow .35s ease,border-color .35s;
@@ -621,7 +621,36 @@ p{margin:0 0 1em}
 #toTop svg{width:19px;height:19px}
 @media (max-width:640px){ #toTop{right:16px;bottom:16px;width:42px;height:42px} }
 
+/* reduced motion: keep the room alive, drop the large movement */
+@keyframes breathe{0%{opacity:.55}100%{opacity:1}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
 @media (prefers-reduced-motion:reduce){
-  .hero-glow,.hero-bg::after,.hero-grid,.hero-inner > *,.metrics,.role.now::before{animation:none}
+  .hero-glow{animation:breathe 12s ease-in-out infinite alternate}
+  .hero-bg::after{animation:breathe 16s ease-in-out infinite alternate}
+  .hero-grid{animation:gridpan 180s linear infinite}
+  .hero-inner > *,.metrics{animation:fadein .7s ease both}
+  .role.now::before{animation:pulse 3.4s ease-out infinite}
+  .reveal{transition-duration:.35s}
   #progress{transition:none}
+}
+
+/* ============ mobile refinements ============ */
+@media (max-width:640px){
+  /* research: the question keeps the full width, the status tag drops below */
+  .rq-head{flex-direction:column;align-items:flex-start;gap:10px}
+  .rq-head h3{max-width:none}
+  /* hero: buttons share one column, meta reads as a stacked list */
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .hero-cta .btn{justify-content:center;width:100%}
+  .hero-meta{flex-direction:column;align-items:flex-start;gap:7px}
+  .hero-meta .dot{display:none}
+  /* two metrics per row instead of four stacked cards */
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .metric{padding:20px 16px 24px;border-right:1px solid rgba(255,255,255,.12)}
+  .metric:nth-child(2n){border-right:0;padding-right:0}
+  .metric:nth-child(2n+1){padding-left:0}
+  .metric:nth-child(n+3){border-top:1px solid rgba(255,255,255,.12)}
+  .metric-lab{min-height:0}
+  .contact-list dd{word-break:break-word}
+  .contact-alt a{display:block;margin:8px 0 0;width:max-content}
 }

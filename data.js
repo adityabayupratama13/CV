@@ -230,8 +230,8 @@ const CV = {
       category: { en: "Award-winning · MES", id: "Peraih penghargaan · MES" },
       year: "2019 — Present",
       desc: {
-        en: "The plant-wide MES: production dashboards per assembly line, full unit traceback, SMT material refill control and Pokayoke enforcement across 500+ product models. Won 1st place globally at the Giken Value Engineering Award 2023 for eliminating defect passage between processes.",
-        id: "MES untuk seluruh pabrik: dashboard produksi per lini perakitan, traceback unit menyeluruh, kontrol refill material SMT, dan penerapan Pokayoke pada 500+ model produk. Juara 1 global Giken Value Engineering Award 2023 karena menghilangkan lolosnya defect antar proses."
+        en: "The plant-wide MES: production dashboards per assembly line, full unit traceback, SMT refill control and Pokayoke enforcement across 500+ product models. 1st place globally at the Giken Value Engineering Award 2023.",
+        id: "MES untuk seluruh pabrik: dashboard produksi per lini perakitan, traceback unit menyeluruh, kontrol refill SMT, dan penerapan Pokayoke pada 500+ model produk. Juara 1 global Giken Value Engineering Award 2023."
       },
       tags: ["C# / .NET", "MySQL", "Traceability", "Pokayoke", "Dashboard"],
       images: [
@@ -272,8 +272,8 @@ const CV = {
       category: { en: "Giken One Apps · Asset Control", id: "Giken One Apps · Kontrol Aset" },
       year: "2026",
       desc: {
-        en: "Real-time feeder location and asset control built on Giken One: it connects the pick-up material database and the refill system to track every feeder down to area → line → machine → table → feeder number, with an analytics dashboard, feeder location map and search. A process that had no inventory system at all became real-time with near-zero manpower.",
-        id: "Kontrol aset dan lokasi feeder secara real-time di atas Giken One: menghubungkan database pick-up material dan sistem refill untuk melacak setiap feeder hingga area → line → mesin → table → nomor feeder, lengkap dengan dashboard analitik, peta lokasi feeder, dan pencarian. Proses yang sebelumnya tanpa sistem inventori menjadi real-time dengan manpower mendekati nol."
+        en: "Real-time feeder location and asset control on Giken One: it links the pick-up material database to the refill system and tracks every feeder down to area → line → machine → table → feeder number. A process with no inventory system at all became real-time, with near-zero manpower.",
+        id: "Kontrol aset dan lokasi feeder real-time di atas Giken One: menghubungkan database pick-up material dengan sistem refill dan melacak setiap feeder hingga area → line → mesin → table → nomor feeder. Proses yang sebelumnya tanpa sistem inventori kini real-time dengan manpower mendekati nol."
       },
       tags: ["Giken One", "Asset Tracking", "Dashboard", "MySQL", "Security"],
       images: [
@@ -287,8 +287,8 @@ const CV = {
       category: { en: "Process Digitalisation", id: "Digitalisasi Proses" },
       year: "2026",
       desc: {
-        en: "Digitalised the SMT feeder data flow across four roles — technician, QA, technician supervisor and production supervisor. Manual preparation and verification of 5–7 hours with 4–6 people became a 30-minute automated flow: cycle time down by roughly 93%, with secure and transparent data.",
-        id: "Mendigitalkan alur data feeder SMT lintas empat peran — teknisi, QA, supervisor teknisi, dan supervisor produksi. Persiapan serta verifikasi manual 5–7 jam dengan 4–6 orang menjadi alur otomatis 30 menit: cycle time turun sekitar 93%, dengan data yang aman dan transparan."
+        en: "Digitalised the SMT feeder data flow across four roles. Manual preparation and verification of 5–7 hours with 4–6 people became a 30-minute automated flow — cycle time down by roughly 93%.",
+        id: "Mendigitalkan alur data feeder SMT lintas empat peran. Persiapan dan verifikasi manual 5–7 jam dengan 4–6 orang menjadi alur otomatis 30 menit — cycle time turun sekitar 93%."
       },
       tags: ["Automation", "SMT", "Workflow", "Giken One"],
       images: [
@@ -302,8 +302,8 @@ const CV = {
       category: { en: "Data Engineering · Quality", id: "Data Engineering · Kualitas" },
       year: "2026",
       desc: {
-        en: "Automated collection and analysis of component pick-up data across 23 SMT lines — 7.9 million pickups processed, error rate and spoilage PPM per line and per machine, high-risk feeder detection, top error feeders, countermeasure tracking and one-click export to Excel, PDF or email.",
-        id: "Pengumpulan dan analisis otomatis data pick-up komponen di 23 lini SMT — 7,9 juta pickup diproses, error rate dan spoilage PPM per lini maupun per mesin, deteksi feeder berisiko tinggi, daftar feeder error tertinggi, pelacakan countermeasure, serta ekspor sekali klik ke Excel, PDF, atau email."
+        en: "Automated collection and analysis of component pick-up data across 23 SMT lines: 7.9 million pickups, error rate and spoilage PPM per line and machine, high-risk feeder detection and one-click export to Excel, PDF or email.",
+        id: "Pengumpulan dan analisis otomatis data pick-up komponen di 23 lini SMT: 7,9 juta pickup, error rate dan spoilage PPM per lini maupun mesin, deteksi feeder berisiko tinggi, serta ekspor sekali klik ke Excel, PDF, atau email."
       },
       tags: ["Analytics", "SMT", "Dashboard", "MySQL", "Reporting"],
       images: [
@@ -331,8 +331,8 @@ const CV = {
       category: { en: "IT Infrastructure", id: "Infrastruktur IT" },
       year: "2020",
       desc: {
-        en: "Moved the plant from manual books and data scattered across individual computers to centralised digital storage on servers and network shares — removing the risk of losing data to a single computer failure, cutting paper cost and making documents searchable across departments.",
-        id: "Memindahkan pabrik dari buku manual dan data yang tersebar di komputer masing-masing menuju penyimpanan digital terpusat di server dan jaringan — menghilangkan risiko kehilangan data akibat kerusakan satu komputer, memangkas biaya kertas, dan membuat dokumen mudah dicari lintas departemen."
+        en: "Moved the plant from manual books and data scattered on individual computers to centralised storage on servers and network shares — no more data lost to a single failed drive, less paper, and documents searchable across departments.",
+        id: "Memindahkan pabrik dari buku manual dan data yang tersebar di tiap komputer menuju penyimpanan terpusat di server dan jaringan — data tidak lagi hilang karena satu hard disk rusak, biaya kertas turun, dan dokumen mudah dicari lintas departemen."
       },
       tags: ["Server", "Network", "Data Management", "Security"],
       images: [
@@ -389,19 +389,13 @@ const CV = {
       category: { en: "Robotics · IoT", id: "Robotika · IoT" },
       year: "2021",
       desc: {
-        en: "Wireless rescue robot for hazardous-environment search, controlled from web and mobile apps.",
-        id: "Robot penyelamat nirkabel untuk pencarian di lingkungan berbahaya, dikendalikan dari aplikasi web dan mobile."
+        en: "Wireless rescue robot for hazardous sites. Thermal, gas, smoke and PIR sensors plus a live camera feed a Node-RED dashboard and an Android app.",
+        id: "Robot penyelamat nirkabel untuk lokasi berbahaya. Sensor termal, gas, asap, dan PIR serta kamera langsung mengalir ke dashboard Node-RED dan aplikasi Android."
       },
       /* drop the Node-RED dashboard screenshot in assets/img/projects/iot-rescue-robot/
          and list it here to turn this card into a slideshow */
       images: ["assets/img/projects/iot-rescue-robot/01-dashboard.jpg"],
       flow: ["Camera + Sensors", "Raspberry Pi", "API Communication", "Node-RED + Android App"],
-      points: [
-        { en: "Raspberry Pi and Arduino control with wireless teleoperation", id: "Kontrol Raspberry Pi dan Arduino dengan teleoperasi nirkabel" },
-        { en: "Thermal, gas, smoke and PIR sensors for detecting survivors", id: "Sensor termal, gas, asap, dan PIR untuk mendeteksi korban" },
-        { en: "Live camera streaming plus humidity, temperature and smoke telemetry on a Node-RED dashboard", id: "Streaming kamera langsung beserta telemetri kelembapan, suhu, dan asap pada dashboard Node-RED" },
-        { en: "Built for search in environments unsafe for rescue teams", id: "Dirancang untuk pencarian di lingkungan yang tidak aman bagi tim penyelamat" }
-      ],
       tags: ["Raspberry Pi", "Arduino", "Sensors", "Streaming"]
     },
     {

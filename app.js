@@ -408,7 +408,7 @@ function renderContact() {
         <dl class="contact-list reveal">
           <div><dt>${t(L.email)}</dt><dd><a href="mailto:${CV.meta.email}">${CV.meta.email}</a></dd></div>
           <div><dt>${t(L.phone)}</dt><dd><a href="${CV.meta.phoneHref}">${CV.meta.phone}</a></dd></div>
-          <div><dt>${t(L.linkedin)}</dt><dd><a href="${CV.meta.linkedin}" target="_blank" rel="noopener">${handle} ↗</a></dd></div>
+          <div><dt>${t(L.linkedin)}</dt><dd><a href="${CV.meta.linkedin}" target="_blank" rel="noopener">${handle}&nbsp;↗</a></dd></div>
           <div><dt>${t(L.location)}</dt><dd>${t(CV.meta.location)}</dd></div>
         </dl>
       </div>
