@@ -117,8 +117,8 @@ const CV = {
           title: { en: "Supervisor MES & IT Engineer", id: "Supervisor MES & IT Engineer" },
           period: { en: "Jul 2026 — Present", id: "Jul 2026 — Sekarang" },
           note: {
-            en: "Promoted to supervise the MES & IT engineering function: setting the system roadmap and architecture standards, prioritising projects across production and support, and developing the engineers who deliver them.",
-            id: "Dipromosikan untuk mengawasi fungsi engineering MES & IT: menetapkan peta jalan sistem dan standar arsitektur, memprioritaskan proyek lintas produksi dan support, serta membina para engineer yang mengerjakannya."
+            en: "Promoted to supervise the MES & IT engineering function: setting the system roadmap and architecture standards, prioritising projects across production and support, owning the department budget, and developing the engineers who deliver them.",
+            id: "Dipromosikan untuk mengawasi fungsi engineering MES & IT: menetapkan peta jalan sistem dan standar arsitektur, memprioritaskan proyek lintas produksi dan support, mengelola anggaran departemen, serta membina para engineer yang mengerjakannya."
           },
           current: true
         },
