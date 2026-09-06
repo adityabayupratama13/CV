@@ -670,3 +670,29 @@ p{margin:0 0 1em}
   .pcard h3{min-height:0}
   .pcard-desc{-webkit-line-clamp:unset;min-height:0}
 }
+
+/* ============ "show all" control (mobile only) ============ */
+.more{display:none}
+@media (max-width:640px){
+  .more{
+    display:inline-flex;align-items:center;justify-content:center;width:100%;margin-top:22px;
+    padding:14px 20px;background:none;border:1px solid var(--line);color:var(--accent);
+    font:inherit;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+    cursor:pointer;transition:background .25s,border-color .25s;
+  }
+  .more:hover{background:color-mix(in srgb,var(--accent) 8%,transparent);border-color:var(--accent)}
+  .pgrid > *:nth-child(n+5){display:none}
+  .pgrid.expanded > *{display:flex}
+  .cert-grid > *:nth-child(n+7){display:none}
+  .cert-grid.expanded > *{display:flex}
+
+  /* tighter vertical rhythm so the page reads shorter on a phone */
+  .section{padding:64px 0}
+  .section-head{margin-bottom:40px}
+  .pgrid{gap:18px}
+  .cert-grid{gap:14px}
+  .cert{padding:20px 18px 18px}
+  .exp-bullets{gap:16px}
+  .exp{padding:40px 0}
+  .prow{padding:14px 0}
+}

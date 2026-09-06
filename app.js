@@ -62,6 +62,10 @@ const UI = {
     onePager:       { en: "Prefer the one-page version?", id: "Lebih suka versi satu halaman?" },
     onePagerCta:    { en: "Download the 1-page CV", id: "Unduh CV 1 halaman" },
     toTop:          { en: "Back to top", id: "Kembali ke atas" },
+    showAll:        { en: "Show all", id: "Tampilkan semua" },
+    showLess:       { en: "Show fewer", id: "Tampilkan lebih sedikit" },
+    nProjects:      { en: "projects", id: "proyek" },
+    nCerts:         { en: "certificates", id: "sertifikat" },
     degree:         { en: "Degree", id: "Program" },
     institution:    { en: "Institution", id: "Institusi" },
     period:         { en: "Period", id: "Periode" },
@@ -253,7 +257,11 @@ function renderProjects() {
   }).join("");
   return `
   <section id="projects" class="section">
-    <div class="wrap">${head("projects")}<div class="pgrid">${cards}</div></div>
+    <div class="wrap">
+      ${head("projects")}
+      <div class="pgrid">${cards}</div>
+      ${moreBtn(CV.projects.length, t(UI.labels.nProjects))}
+    </div>
   </section>`;
 }
 
@@ -382,7 +390,11 @@ function renderCerts() {
   }).join("");
   return `
   <section id="certifications" class="section alt">
-    <div class="wrap">${head("certifications")}<div class="cert-grid">${cards}</div></div>
+    <div class="wrap">
+      ${head("certifications")}
+      <div class="cert-grid">${cards}</div>
+      ${moreBtn(CV.certifications.length, t(UI.labels.nCerts))}
+    </div>
   </section>`;
 }
 
@@ -422,6 +434,13 @@ function renderContact() {
   </footer>`;
 }
 
+/* mobile-only "show all" toggle for the long grids */
+function moreBtn(count, label) {
+  return `<button class="more" type="button"
+    data-more="${t(UI.labels.showAll)} ${count} ${label}"
+    data-less="${t(UI.labels.showLess)}">${t(UI.labels.showAll)} ${count} ${label}</button>`;
+}
+
 function head(key) {
   const lead = UI.sectionLead[key];
   return `
@@ -459,6 +478,13 @@ function wire() {
     document.documentElement.dataset.theme = next;
     localStorage.setItem("cv-theme", next);
   };
+  document.querySelectorAll(".more").forEach(b => b.onclick = () => {
+    const grid = b.previousElementSibling;
+    const open = grid.classList.toggle("expanded");
+    b.textContent = open ? b.dataset.less : b.dataset.more;
+    if (!open) grid.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
   const nav = document.getElementById("nav");
   document.getElementById("menuBtn").onclick = () => nav.classList.toggle("open");
   nav.querySelectorAll("a").forEach(a => a.onclick = () => nav.classList.remove("open"));
