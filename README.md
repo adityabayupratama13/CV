@@ -23,7 +23,7 @@ Then open http://127.0.0.1:8765 (opening `index.html` directly does not work —
 Everything is in `data.js`. Each text is a pair:
 
 ```js
-role: { en: "Supervisor MES & IT Engineer", id: "Supervisor MES & IT Engineer" }
+role: { en: "MES & IT Engineering Supervisor", id: "Supervisor MES & IT" }
 ```
 
 - **Add a project** → copy one `{ ... }` block inside `projects: [ ]`. Three card types:
