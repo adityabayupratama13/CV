@@ -585,6 +585,7 @@ const CV = {
       group: { en: "AI & Modern Tooling", id: "AI & Perkakas Modern" },
       items: ["Claude Code", "Cursor", "Antigravity", "Codex", "LM Studio (local LLM)",
               "AI-Assisted Development", "Prompt Engineering", "LLM Integration",
+              "Generative AI on Microsoft Azure", "Data Science on Microsoft Fabric",
               "Machine Learning Practice", "OpenCV / Computer Vision"]
     },
     {
@@ -634,6 +635,22 @@ const CV = {
      `url` opens the credential. Empty url = card is not clickable.
      Verify each URL once; replace any that does not resolve. */
   certifications: [
+    { name: { en: "Building AI Gen Applications with Microsoft Azure", id: "Building AI Gen Applications with Microsoft Azure" },
+      issuer: "Microsoft · Dicoding Indonesia", date: { en: "Sep 2026 — Sep 2029", id: "Sep 2026 — Sep 2029" },
+      credential: "MEPJMJ5K6P3V", url: "https://www.dicoding.com/certificates/MEPJMJ5K6P3V", featured: true },
+
+    { name: { en: "Learn Data Science Applications with Microsoft Fabric", id: "Learn Data Science Applications with Microsoft Fabric" },
+      issuer: "Microsoft · Dicoding Indonesia", date: { en: "Sep 2026 — Sep 2029", id: "Sep 2026 — Sep 2029" },
+      credential: "L4PQW8R07PO1", url: "https://www.dicoding.com/certificates/L4PQW8R07PO1", featured: true },
+
+    { name: { en: "Prompt Engineering for Software Developers", id: "Prompt Engineering for Software Developers" },
+      issuer: "Dicoding Indonesia", date: { en: "Sep 2026 — Sep 2029", id: "Sep 2026 — Sep 2029" },
+      credential: "1OP871638ZQK", url: "https://www.dicoding.com/certificates/1OP871638ZQK" },
+
+    { name: { en: "Learn AI Basics", id: "Belajar Dasar AI" },
+      issuer: "Dicoding Indonesia", date: { en: "Sep 2026 — Sep 2029", id: "Sep 2026 — Sep 2029" },
+      credential: "81P2K7GRQXOY", url: "https://www.dicoding.com/certificates/81P2K7GRQXOY" },
+
     { name: { en: "Google Data Analytics Professional Certificate", id: "Google Data Analytics Professional Certificate" },
       issuer: "Coursera", date: { en: "Oct 2022", id: "Okt 2022" }, credential: "Z6FL9554JMKX",
       url: "https://www.coursera.org/account/accomplishments/certificate/Z6FL9554JMKX", featured: true },

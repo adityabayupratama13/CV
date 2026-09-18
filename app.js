@@ -37,8 +37,8 @@ const UI = {
                   id: "Pendidikan vokasi terapan yang dibangun di atas mekatronika, robotika, dan otomasi." },
     skills:     { en: "From embedded hardware to enterprise software and the teams that run them.",
                   id: "Dari hardware embedded hingga software enterprise dan tim yang menjalankannya." },
-    certifications: { en: "Verified credentials across data analytics, industrial control and modern engineering practice.",
-                      id: "Kredensial terverifikasi di bidang analitik data, kontrol industri, dan praktik engineering modern." }
+    certifications: { en: "Verified credentials across applied AI, data analytics, industrial control and modern engineering practice.",
+                      id: "Kredensial terverifikasi di bidang AI terapan, analitik data, kontrol industri, dan praktik engineering modern." }
   },
   labels: {
     viewCredential: { en: "View credential", id: "Lihat kredensial" },
